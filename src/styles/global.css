@@ -225,18 +225,67 @@ main {
 }
 
 .section {
-  padding: 2rem 0;
+  padding: clamp(2.25rem, 5vw, 4rem) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .section h2 {
-  font-size: 1.35rem;
-  margin: 0 0 0.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  margin: 0;
+  line-height: 1.2;
 }
 
 .section p {
   color: var(--color-muted);
   margin: 0;
+}
+
+.section-intro {
+  margin-top: 0.85rem;
+  max-width: 62ch;
+}
+
+.services-grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.service-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 1rem;
+  transition: border-color 0.2s, transform 0.12s;
+}
+
+.service-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.service-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.service-text {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--color-muted);
+}
+
+@media (min-width: 720px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1.1rem;
+  }
 }
 
 /* --- Підвал --- */

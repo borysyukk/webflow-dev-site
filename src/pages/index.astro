@@ -18,7 +18,7 @@ import '../styles/global.css';
 				<a href="/" class="logo">Webflow Dev</a>
 				<ul class="nav-list" id="nav-list">
 					<li><a href="#hero">Головна</a></li>
-					<li><a href="#about">Про нас</a></li>
+					<li><a href="#services">Послуги</a></li>
 					<li><a href="#contact">Контакт</a></li>
 				</ul>
 				<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
@@ -39,13 +39,42 @@ import '../styles/global.css';
 				</p>
 				<div class="hero-actions">
 					<a href="#contact" class="btn btn-primary">Обговорити проєкт</a>
-					<a href="#about" class="btn btn-secondary">Як відбувається робота</a>
+					<a href="#services" class="btn btn-secondary">Що я роблю</a>
 				</div>
 			</section>
 
-			<section id="about" class="section">
-				<h2>Про проєкт</h2>
-				<p>Сайт на Astro з підключеними CSS та JavaScript.</p>
+			<section id="services" class="section services">
+				<h2>Послуги</h2>
+				<p class="section-intro">
+					Працюю з задачами, де потрібен зрозумілий сайт без зайвої складності, затягнутих етапів
+					і хаосу в процесі.
+				</p>
+				<div class="services-grid">
+					<article class="service-card">
+						<h3 class="service-title">Лендинг на Webflow</h3>
+						<p class="service-text">
+							Одна сторінка з чіткою структурою та фокусом на заявку, дзвінок або іншу цільову дію.
+						</p>
+					</article>
+					<article class="service-card">
+						<h3 class="service-title">Бізнес-сайт</h3>
+						<p class="service-text">
+							Багатосторінковий сайт для компанії чи експерта з логічною навігацією і чистою подачею.
+						</p>
+					</article>
+					<article class="service-card">
+						<h3 class="service-title">Перенос або редизайн у Webflow</h3>
+						<p class="service-text">
+							Переношу старий сайт або макет у Webflow, зберігаючи зміст і покращуючи структуру.
+						</p>
+					</article>
+					<article class="service-card">
+						<h3 class="service-title">Підтримка і точкові доопрацювання</h3>
+						<p class="service-text">
+							Додаю нові секції, оновлюю контент, покращую адаптив і виправляю дрібні недопрацювання.
+						</p>
+					</article>
+				</div>
 			</section>
 
 			<section id="contact" class="section">
