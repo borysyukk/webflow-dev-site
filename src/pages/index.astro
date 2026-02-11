@@ -21,6 +21,8 @@ import '../styles/global.css';
 					<li><a href="#services">Послуги</a></li>
 					<li><a href="#process">Процес</a></li>
 					<li><a href="#work">Роботи</a></li>
+					<li><a href="#about">Про мене</a></li>
+					<li><a href="#blog">Блог</a></li>
 					<li><a href="#contact">Контакт</a></li>
 				</ul>
 				<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
@@ -178,14 +180,147 @@ import '../styles/global.css';
 				</div>
 			</section>
 
-			<section id="contact" class="section">
-				<h2>Контакт</h2>
-				<p>Тут може бути форма або посилання.</p>
+			<section id="about" class="section about">
+				<h2>Про мене</h2>
+				<div class="about-grid">
+					<div class="about-avatar" aria-hidden="true">MY</div>
+					<div>
+						<p class="about-text">
+							Мене звати Михайло. Я Webflow-розробник, який фокусується на практичних рішеннях:
+							чітка структура, чиста верстка і спокійна комунікація без зайвого шуму.
+						</p>
+						<p class="about-text">
+							Працюю напряму з клієнтами без посередників. Моя задача - зробити сайт, який зрозуміло
+							пояснює цінність бізнесу і допомагає отримувати заявки.
+						</p>
+						<ul class="about-facts">
+							<li class="about-fact"><strong>Формат:</strong> напряму зі спеціалістом</li>
+							<li class="about-fact"><strong>Фокус:</strong> Webflow і контентна структура</li>
+							<li class="about-fact"><strong>Підхід:</strong> акуратно, вчасно, без хаосу</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section id="blog" class="section blog">
+				<h2>Блог</h2>
+				<p class="section-intro">
+					Пишу практичні статті, які допомагають розібратися з Webflow, бюджетом і вибором формату
+					сайту перед стартом проєкту.
+				</p>
+				<div class="blog-grid">
+					<article class="blog-card">
+						<p class="blog-meta">Webflow • 6 хв читання</p>
+						<h3 class="blog-title">Чому Webflow, а не WordPress для малого бізнесу</h3>
+						<p class="blog-text">
+							Просте порівняння платформ: коли Webflow дає перевагу, а коли краще обрати інший підхід.
+						</p>
+						<a href="#contact" class="blog-link">Читати статтю</a>
+					</article>
+					<article class="blog-card">
+						<p class="blog-meta">Бюджет • 5 хв читання</p>
+						<h3 class="blog-title">Скільки коштує сайт на Webflow у 2026 році</h3>
+						<p class="blog-text">
+							З чого складається ціна, як оцінити обсяг роботи і що впливає на фінальний бюджет.
+						</p>
+						<a href="#contact" class="blog-link">Читати статтю</a>
+					</article>
+					<article class="blog-card">
+						<p class="blog-meta">Старт проєкту • 4 хв читання</p>
+						<h3 class="blog-title">Що підготувати перед створенням сайту</h3>
+						<p class="blog-text">
+							Короткий список матеріалів, які економлять час на запуску і роблять процес передбачуваним.
+						</p>
+						<a href="#contact" class="blog-link">Читати статтю</a>
+					</article>
+				</div>
+				<div class="blog-actions">
+					<a href="#contact" class="btn btn-secondary">Всі статті</a>
+				</div>
+			</section>
+
+			<section id="contact" class="section contact">
+				<h2>Є задача? Давайте обговоримо</h2>
+				<p class="section-intro">
+					Напишіть коротко про проєкт - я відповім протягом дня і скажу, як краще реалізувати
+					вашу задачу у Webflow.
+				</p>
+				<div class="contact-wrap">
+					<form class="contact-form" action="#" method="post">
+						<div class="contact-field">
+							<label for="name">Ім'я</label>
+							<input id="name" name="name" type="text" placeholder="Ваше ім'я" required />
+						</div>
+						<div class="contact-field">
+							<label for="contact-info">Email або Telegram</label>
+							<input
+								id="contact-info"
+								name="contact"
+								type="text"
+								placeholder="you@email.com / @username"
+								required
+							/>
+						</div>
+						<div class="contact-field contact-field-full">
+							<label for="project">Коротко про задачу</label>
+							<textarea
+								id="project"
+								name="project"
+								rows="4"
+								placeholder="Що треба зробити, які цілі і бажані терміни"
+								required
+							></textarea>
+						</div>
+						<div class="contact-field contact-field-full contact-submit">
+							<button type="submit" class="btn btn-primary">Надіслати запит</button>
+						</div>
+					</form>
+
+					<div class="contact-side">
+						<p class="contact-side-title">Альтернативно можна написати напряму:</p>
+						<ul class="contact-list">
+							<li><a href="mailto:hello@example.com">hello@example.com</a></li>
+							<li><a href="https://t.me/username" target="_blank" rel="noreferrer">@username</a></li>
+							<li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+						</ul>
+						<p class="contact-note">
+							Якщо запит терміновий, напишіть у Telegram - так зазвичай найшвидше.
+						</p>
+					</div>
+				</div>
 			</section>
 		</main>
 
 		<footer class="footer">
-			<p>&copy; Webflow Dev Site</p>
+			<div class="footer-inner">
+				<div class="footer-brand">
+					<a href="#hero" class="footer-logo">Webflow Dev</a>
+					<p class="footer-text">Персональний сайт Webflow-розробника для бізнесу, фаундерів та експертів.</p>
+				</div>
+
+				<nav class="footer-nav" aria-label="Нижня навігація">
+					<a href="#services">Послуги</a>
+					<a href="#process">Процес</a>
+					<a href="#work">Роботи</a>
+					<a href="#blog">Блог</a>
+					<a href="#contact">Контакт</a>
+				</nav>
+
+				<div class="footer-contacts">
+					<a href="mailto:hello@example.com">hello@example.com</a>
+					<a href="https://t.me/username" target="_blank" rel="noreferrer">Telegram</a>
+					<a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+				</div>
+
+				<div class="footer-bottom">
+					<p class="footer-copy">&copy; 2026 Webflow Dev. All rights reserved.</p>
+					<div class="footer-langs" aria-label="Language switcher">
+						<a href="/" class="is-active">UK</a>
+						<span>/</span>
+						<a href="/en/">EN</a>
+					</div>
+				</div>
+			</div>
 		</footer>
 
 		<script>
