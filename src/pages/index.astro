@@ -8,7 +8,7 @@ import '../styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="robots" content="noindex, nofollow" />
+		<meta name="description" content="Персональний сайт Webflow-розробника: лендинги, бізнес-сайти та верстка під ключ." />
 		<meta name="generator" content={Astro.generator} />
 		<title>Webflow Dev Site</title>
 	</head>
@@ -31,12 +31,16 @@ import '../styles/global.css';
 
 		<main>
 			<section id="hero" class="hero">
-				<h1 class="hero-title">Привіт, це головна сторінка V2</h1>
+				<p class="hero-kicker">Webflow Developer</p>
+				<h1 class="hero-title">Роблю сайти на Webflow - акуратно, швидко, з увагою до структури</h1>
 				<p class="hero-text">
-					Стилі підключені з <code>src/styles/global.css</code>, скрипти — у цьому файлі.
+					Допомагаю бізнесам, фаундерам і спеціалістам запускати зрозумілі сайти без зайвої
+					студійної складності та затягнутих процесів.
 				</p>
-				<button type="button" class="btn btn-primary" data-counter>Натисни мене</button>
-				<p class="counter-text">Кліків: <span id="click-count">0</span></p>
+				<div class="hero-actions">
+					<a href="#contact" class="btn btn-primary">Обговорити проєкт</a>
+					<a href="#about" class="btn btn-secondary">Як відбувається робота</a>
+				</div>
 			</section>
 
 			<section id="about" class="section">
@@ -55,16 +59,6 @@ import '../styles/global.css';
 		</footer>
 
 		<script>
-			// Лічильник кліків
-			const counterEl = document.getElementById('click-count');
-			const btn = document.querySelector('[data-counter]');
-			if (btn && counterEl) {
-				let count = 0;
-				btn.addEventListener('click', () => {
-					count += 1;
-					counterEl.textContent = count;
-				});
-			}
 			// Мобільне меню
 			const menuToggle = document.getElementById('menu-toggle');
 			const navList = document.getElementById('nav-list');
