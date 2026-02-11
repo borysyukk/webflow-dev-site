@@ -277,6 +277,42 @@ main {
   color: var(--color-muted);
 }
 
+.process-list {
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.process-item {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius) + 2px);
+  padding: 1rem;
+}
+
+.process-step {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.process-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.process-text {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--color-muted);
+}
+
 @media (min-width: 720px) {
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -285,6 +321,21 @@ main {
 
   .service-card {
     padding: 1.1rem;
+  }
+
+  .process-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .process-item {
+    padding: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
