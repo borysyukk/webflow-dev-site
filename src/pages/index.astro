@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="uk">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Webflow Dev Site</title>
+	</head>
+	<body>
+		<header class="header">
+			<nav class="nav">
+				<a href="/" class="logo">Webflow Dev</a>
+				<ul class="nav-list" id="nav-list">
+					<li><a href="#hero">Головна</a></li>
+					<li><a href="#about">Про нас</a></li>
+					<li><a href="#contact">Контакт</a></li>
+				</ul>
+				<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</nav>
+		</header>
+
+		<main>
+			<section id="hero" class="hero">
+				<h1 class="hero-title">Привіт, це головна сторінка</h1>
+				<p class="hero-text">
+					Стилі підключені з <code>src/styles/global.css</code>, скрипти — у цьому файлі.
+				</p>
+				<button type="button" class="btn btn-primary" data-counter>Натисни мене</button>
+				<p class="counter-text">Кліків: <span id="click-count">0</span></p>
+			</section>
+
+			<section id="about" class="section">
+				<h2>Про проєкт</h2>
+				<p>Сайт на Astro з підключеними CSS та JavaScript.</p>
+			</section>
+
+			<section id="contact" class="section">
+				<h2>Контакт</h2>
+				<p>Тут може бути форма або посилання.</p>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<p>&copy; Webflow Dev Site</p>
+		</footer>
+
+		<script>
+			// Лічильник кліків
+			const counterEl = document.getElementById('click-count');
+			const btn = document.querySelector('[data-counter]');
+			if (btn && counterEl) {
+				let count = 0;
+				btn.addEventListener('click', () => {
+					count += 1;
+					counterEl.textContent = count;
+				});
+			}
+			// Мобільне меню
+			const menuToggle = document.getElementById('menu-toggle');
+			const navList = document.getElementById('nav-list');
+			if (menuToggle && navList) {
+				menuToggle.addEventListener('click', () => {
+					const isOpen = navList.classList.contains('is-open');
+					navList.classList.toggle('is-open');
+					menuToggle.setAttribute('aria-label', isOpen ? 'Відкрити меню' : 'Закрити меню');
+				});
+			}
+		</script>
+	</body>
+</html>
