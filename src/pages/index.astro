@@ -35,7 +35,7 @@ import '../styles/global.css';
 	</head>
 	<body>
 		<header class="header">
-			<nav class="nav">
+			<nav class="nav container">
 				<a href="/" class="logo"><img src="/images/logo-large.svg" alt="Webflow Dev" width="196" height="17" /></a>
 				<ul class="nav-list" id="nav-list">
 					<li><a href="#hero">Головна</a></li>
@@ -56,6 +56,9 @@ import '../styles/global.css';
 
 		<main>
 			<section id="hero" class="hero">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content hero-content">
 				<p class="hero-kicker">Webflow Developer</p>
 				<h1 class="hero-title">Розробляю сайти на Webflow — акуратно, з чіткою структурою і фокусом на результат</h1>
 				<p class="hero-text">
@@ -66,9 +69,15 @@ import '../styles/global.css';
 					<a href="#contact" class="btn btn-primary">Обговорити проєкт</a>
 					<a href="#services" class="btn btn-secondary">Що я роблю</a>
 				</div>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<section id="services" class="section services">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Послуги</h2>
 				<p class="section-intro">
 					Розробляю сайти на Webflow — від лендингів до багатосторінкових проєктів. Після запуску
@@ -99,10 +108,15 @@ import '../styles/global.css';
 							Нові секції, оновлення контенту, покращення адаптиву — точкові задачі без зайвих процесів.
 						</p>
 					</article>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section id="process" class="section process">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Як відбувається робота</h2>
 				<p class="section-intro">
 					Простий і передбачуваний процес без зайвих етапів. На кожному кроці ви розумієте, що
@@ -145,9 +159,15 @@ import '../styles/global.css';
 						</p>
 					</li>
 				</ol>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<section id="work" class="section work">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Роботи</h2>
 				<p class="section-intro">
 					Кілька прикладів проєктів, які я розробив на Webflow — від структури і верстки
@@ -198,14 +218,19 @@ import '../styles/global.css';
 							<a href="#contact" class="work-link">Переглянути</a>
 						</div>
 					</article>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section id="about" class="section about">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Про мене</h2>
 				<div class="about-grid">
 					<div class="about-avatar" aria-hidden="true">MY</div>
-					<div>
+					<div class="about-content">
 						<p class="about-text">
 							Мене звати Михайло. Я розробляю сайти на Webflow — з фокусом на чітку структуру,
 							акуратну верстку і спокійну комунікацію без зайвого шуму.
@@ -220,10 +245,15 @@ import '../styles/global.css';
 							<li class="about-fact"><strong>Підхід:</strong> акуратно, вчасно, без хаосу</li>
 						</ul>
 					</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
 			<section id="blog" class="section blog">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Блог</h2>
 				<p class="section-intro">
 					Статті про Webflow, вибір формату сайту та підготовку до запуску — щоб ви розуміли
@@ -258,9 +288,15 @@ import '../styles/global.css';
 				<div class="blog-actions">
 					<a href="#contact" class="btn btn-secondary">Всі статті</a>
 				</div>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<section id="contact" class="section contact">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-content">
 				<h2>Є задача? Давайте обговоримо</h2>
 				<p class="section-intro">
 					Опишіть коротко вашу задачу — я відповім протягом дня і скажу, як найкраще
@@ -308,12 +344,14 @@ import '../styles/global.css';
 							Якщо запит терміновий, напишіть у Telegram — так зазвичай найшвидше.
 						</p>
 					</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
 
 		<footer class="footer">
-			<div class="footer-inner">
+			<div class="footer-inner container">
 				<div class="footer-brand">
 					<a href="#hero" class="footer-logo"><img src="/images/logo-large.svg" alt="Webflow Dev" width="196" height="17" /></a>
 					<p class="footer-text">Розробка сайтів на Webflow для бізнесу, фаундерів та спеціалістів.</p>
