@@ -8,7 +8,7 @@
 }
 
 :root {
-  --color-bg: #0f0f12;
+  --color-bg: #080808;
   --color-surface: #1a1a20;
   --color-text: #e8e8ed;
   --color-muted: #8888a0;
@@ -42,8 +42,8 @@ body {
 
 /* --- Шапка --- */
 .header {
-  background: var(--color-bg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #080808;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -155,7 +155,7 @@ body {
 main {
   flex: 1;
   width: 100%;
-  padding-block: 2rem;
+  padding-block: 0;
 }
 
 .section-pad {
@@ -168,14 +168,18 @@ main {
 }
 
 .hero .section-pad {
-  padding-block: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 4rem);
+  padding-block: 0;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 }
 
 .hero-content {
   width: 100%;
-  gap: 1.1rem;
+  gap: 1.6rem;
   justify-items: center;
   text-align: center;
+  transform: translateY(-11vh);
 }
 
 .hero-kicker {
@@ -187,16 +191,21 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(3rem, 8vw, 5.4rem);
   font-weight: 700;
   color: var(--color-text);
-  line-height: 1.2;
+  line-height: 1.1;
+  max-width: 16ch;
+  margin-inline: auto;
   text-wrap: balance;
 }
 
 .hero-text {
-  color: var(--color-muted);
-  max-width: none;
+  font-size: clamp(1.35rem, 1.65vw, 1.53rem);
+  line-height: 1.55;
+  font-weight: 300;
+  color: var(--color-text);
+  max-width: 52ch;
   text-wrap: pretty;
 }
 
@@ -233,6 +242,22 @@ main {
   background: var(--color-accent-hover);
 }
 
+.hero-actions .btn-primary {
+  padding: 0.85rem 1.65rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  background: #1f6fff;
+  border-color: #1f6fff;
+  box-shadow: 0 8px 22px rgba(31, 111, 255, 0.28);
+}
+
+.hero-actions .btn-primary:hover {
+  background: #3a7cff;
+  border-color: #3a7cff;
+  box-shadow: 0 10px 26px rgba(58, 124, 255, 0.32);
+}
+
 .btn-secondary {
   border-color: rgba(255, 255, 255, 0.18);
   color: var(--color-text);
@@ -256,7 +281,7 @@ main {
 }
 
 .section h2 {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(2.8rem, 5vw, 4rem);
   line-height: 1.2;
 }
 
@@ -265,7 +290,14 @@ main {
 }
 
 .section-intro {
-  max-width: 62ch;
+  max-width: 32ch;
+  font-size: clamp(2.25rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.section .section-intro {
+  color: var(--color-text);
 }
 
 .services-grid {
@@ -333,67 +365,130 @@ main {
   color: var(--color-muted);
 }
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1rem;
+.work-section {
+  justify-items: center;
 }
 
-.work-card {
-  background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--radius) + 2px);
-  padding: 1rem;
-  display: grid;
-  gap: 0.8rem;
+.work-heading,
+.work-intro {
+  text-align: center;
 }
 
-.work-preview {
-  border-radius: var(--radius);
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  min-height: 96px;
+.work-preview-frame {
+  width: 100%;
+  min-height: clamp(260px, 48vw, 560px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-preview-panel {
+  position: absolute;
+  inset: 0;
   display: grid;
   place-items: center;
-  color: var(--color-muted);
-  font-size: 0.85rem;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 1rem;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
 }
 
-.work-title {
-  font-size: 1.05rem;
-  line-height: 1.35;
+.work-preview-panel span {
+  color: rgba(232, 232, 237, 0.86);
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-wrap: balance;
 }
 
-.work-text {
-  font-size: 0.97rem;
-  color: var(--color-muted);
+.work-preview-panel.is-active {
+  background: transparent;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.work-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+.work-types {
+  width: 100%;
+  padding-top: 0.7rem;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
 }
 
-.work-tag {
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  padding: 0.2rem 0.65rem;
-  font-size: 0.8rem;
+.work-type {
+  --tab-progress: 0;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  display: grid;
+  gap: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  position: relative;
+  padding-top: 1.5rem;
+  opacity: 0.52;
+  transition: opacity 0.25s ease;
+}
+
+.work-type::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.work-type::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.95);
+  transform: scaleX(var(--tab-progress));
+  transform-origin: left center;
+}
+
+.work-type-title {
+  font-size: 1.6rem;
+  line-height: 1.3;
   color: var(--color-text);
 }
 
-.work-link {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
+.work-type-desc {
+  font-size: 16px;
+  color: #ffffff;
 }
 
-.work-link:hover {
-  color: var(--color-accent-hover);
+.work-type.is-active .work-type-title {
+  color: #ffffff;
+}
+
+.work-type.is-active .work-type-desc {
+  color: #ffffff;
+}
+
+.work-type.is-active {
+  opacity: 1;
+}
+
+.work-type:not(.is-active):hover {
+  opacity: 0.78;
+}
+
+.work-type:not(.is-active):hover .work-type-title {
+  color: #ffffff;
 }
 
 .about-grid {
@@ -583,14 +678,6 @@ main {
     padding: 1.1rem;
   }
 
-  .work-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .work-card {
-    padding: 1.1rem;
-  }
-
   .about-grid {
     grid-template-columns: auto 1fr;
     gap: 1.25rem;
@@ -625,6 +712,17 @@ main {
 @media (min-width: 1024px) {
   .process-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .work-types {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .work-preview-frame {
+    min-height: 220px;
   }
 }
 

@@ -1,43 +1,78 @@
-# Astro Starter Kit: Minimal
+# Webflow Dev Site
+
+Astro site with a backup workflow optimized for fast iteration and safe rollback.
+
+## Run Locally
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Backup Workflow (Recommended)
 
-## 🚀 Project Structure
+Professional setup used here:
+- meaningful manual checkpoints when you accept changes
+- optional autosave snapshots every 10 minutes
+- safe restore to a separate branch (no destructive reset)
 
-Inside of your Astro project, you will see the following folders and files:
+### 1) Manual checkpoint (best default)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+Create a commit at any accepted state:
+
+```sh
+npm run checkpoint -- "hero polish approved"
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Without a message:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+npm run checkpoint
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### 2) Autosave every 10 minutes (optional)
 
-## 🧞 Commands
+Install Windows Task Scheduler job:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm run autosave:install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Remove it:
 
-## 👀 Want to learn more?
+```sh
+npm run autosave:remove
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Run one autosave manually:
+
+```sh
+npm run autosave:once
+```
+
+### 3) Restore safely to an older version
+
+Create a new branch from any commit hash:
+
+```sh
+npm run restore:branch -- a1b2c3d
+```
+
+If you run without a hash, the script shows recent commits:
+
+```sh
+npm run restore:branch
+```
+
+This restore flow is safe because it does not rewrite your current branch.
+
+## Scripts
+
+- `npm run dev` - start local server
+- `npm run build` - production build
+- `npm run preview` - preview build
+- `npm run checkpoint` - manual backup commit
+- `npm run autosave:once` - one autosave commit
+- `npm run autosave:install` - schedule autosave every 10 minutes
+- `npm run autosave:remove` - remove autosave schedule
+- `npm run restore:branch` - open old state in a new branch

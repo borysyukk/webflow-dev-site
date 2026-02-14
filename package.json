@@ -1,1 +1,19 @@
-{"name":"webflow-dev-site","type":"module","version":"0.0.1","scripts":{"dev":"astro dev","build":"astro build","preview":"astro preview","astro":"astro"},"dependencies":{"astro":"^5.17.1"}}
+{
+  "name": "webflow-dev-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "checkpoint": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/checkpoint.ps1",
+    "autosave:once": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/autosave-once.ps1",
+    "autosave:install": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-autosave-task.ps1",
+    "autosave:remove": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/remove-autosave-task.ps1",
+    "restore:branch": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/restore-checkpoint.ps1"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  }
+}
