@@ -542,36 +542,6 @@ import '../styles/global.css';
 				requestAnimationFrame(animateTabs);
 			}
 
-			const sectionsToReveal = document.querySelectorAll('main > section');
-			if (sectionsToReveal.length) {
-				const revealItems = Array.from(sectionsToReveal);
-				const revealAll = () => {
-					revealItems.forEach((section) => section.classList.add('is-revealed'));
-				};
-
-				revealItems.forEach((section) => section.classList.add('reveal-on-scroll'));
-				const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-				if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-					revealAll();
-				} else {
-					const sectionObserver = new IntersectionObserver(
-						(entries, observer) => {
-							entries.forEach((entry) => {
-								if (!entry.isIntersecting) return;
-								entry.target.classList.add('is-revealed');
-								observer.unobserve(entry.target);
-							});
-						},
-						{
-							threshold: 0.18,
-							rootMargin: '0px 0px -8% 0px'
-						}
-					);
-
-					revealItems.forEach((section) => sectionObserver.observe(section));
-				}
-			}
-
 			const processItems = document.querySelectorAll('.process-item[data-step]');
 			const processPanels = document.querySelectorAll('.process-preview-panel[data-step-panel]');
 			if (processItems.length && processPanels.length) {
