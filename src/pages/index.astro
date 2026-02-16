@@ -46,11 +46,14 @@ import '../styles/global.css';
 					<li><a href="#blog">Блог</a></li>
 					<li><a href="#contact">Контакт</a></li>
 				</ul>
-				<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
+				<div class="nav-actions">
+					<a href="#contact" class="btn btn-primary nav-cta">Обговорити проєкт</a>
+					<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
 			</nav>
 		</header>
 
@@ -309,25 +312,34 @@ import '../styles/global.css';
 				<div class="section-pad">
 					<div class="container">
 						<div class="section-content">
-				<h2>Про мене</h2>
-				<div class="about-grid">
-					<div class="about-avatar" aria-hidden="true">MY</div>
-					<div class="about-content">
-						<p class="about-text">
-							Мене звати Михайло. Я розробляю сайти на Webflow — з фокусом на чітку структуру,
-							акуратну верстку і спокійну комунікацію без зайвого шуму.
+				<div class="about-layout">
+					<div class="about-copy">
+						<p class="about-kicker">Про мене</p>
+						<h2 class="about-title">
+							👋 Мене звати Станіслав, я Webflow Developer.
+						</h2>
+						<p class="about-lead">
+							Працюю віддалено з клієнтами над сайтами, які швидко запускаються, зрозуміло презентують
+							послуги і допомагають стабільно отримувати заявки.
 						</p>
-						<p class="about-text">
-							Працюю напряму з клієнтом, без посередників. Моя задача — зробити сайт, який зрозуміло
-							подає ваш бізнес і допомагає отримувати заявки.
+						<p class="about-lead">
+							Беру на себе весь процес: структура, верстка в Webflow, базове SEO, передача і подальша
+							підтримка без хаосу в комунікації.
 						</p>
-						<ul class="about-facts">
-							<li class="about-fact"><strong>Спеціалізація:</strong> розробка сайтів на Webflow</li>
-							<li class="about-fact"><strong>Формат:</strong> напряму, без менеджерів і посередників</li>
-							<li class="about-fact"><strong>Підхід:</strong> акуратно, вчасно, без хаосу</li>
-						</ul>
+						<a href="#contact" class="btn btn-primary about-cta">Обговорити проєкт</a>
 					</div>
+					<div class="about-visual" aria-hidden="true">
+						<div class="about-photo about-photo-wide">
+							<img src="/images/projects/project-business.svg" alt="" class="about-visual-image" loading="lazy" />
 						</div>
+						<div class="about-photo about-photo-tall">
+							<img src="/images/projects/project-cms.svg" alt="" class="about-visual-image" loading="lazy" />
+						</div>
+						<div class="about-photo about-photo-bottom">
+							<img src="/images/projects/project-landing.svg" alt="" class="about-visual-image" loading="lazy" />
+						</div>
+					</div>
+				</div>
 					</div>
 				</div>
 			</section>
@@ -379,53 +391,43 @@ import '../styles/global.css';
 				<div class="section-pad">
 					<div class="container">
 						<div class="section-content">
-				<h2>Є задача? Давайте обговоримо</h2>
-				<p class="section-intro">
-					Опишіть коротко вашу задачу — я відповім протягом дня і скажу, як найкраще
-					реалізувати це на Webflow.
-				</p>
-				<div class="contact-wrap">
-					<form class="contact-form" action="#" method="post">
-						<div class="contact-field">
-							<label for="name">Ім'я</label>
-							<input id="name" name="name" type="text" placeholder="Ваше ім'я" required />
-						</div>
-						<div class="contact-field">
-							<label for="contact-info">Email або Telegram</label>
-							<input
-								id="contact-info"
-								name="contact"
-								type="text"
-								placeholder="you@email.com / @username"
-								required
-							/>
-						</div>
-						<div class="contact-field contact-field-full">
-							<label for="project">Коротко про задачу</label>
-							<textarea
-								id="project"
-								name="project"
-								rows="4"
-								placeholder="Що треба зробити, які цілі і бажані терміни"
-								required
-							></textarea>
-						</div>
-						<div class="contact-field contact-field-full contact-submit">
-							<button type="submit" class="btn btn-primary">Надіслати запит</button>
-						</div>
-					</form>
-
-					<div class="contact-side">
-						<p class="contact-side-title">Альтернативно можна написати напряму:</p>
-						<ul class="contact-list">
-							<li><a href="mailto:hello@example.com">hello@example.com</a></li>
-							<li><a href="https://t.me/username" target="_blank" rel="noreferrer">@username</a></li>
-							<li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-						</ul>
-						<p class="contact-note">
-							Якщо запит терміновий, напишіть у Telegram — так зазвичай найшвидше.
-						</p>
-					</div>
+							<div class="contact-hero-shell">
+								<div class="contact-hero-frame">
+									<div class="contact-hero-bg">
+										<div class="contact-layout">
+											<div class="contact-copy">
+												<h2 class="contact-title">Готові до запуску сайту без обмежень?</h2>
+												<p class="contact-intro">Напишіть контакт і ваше ім'я - я повернусь з відповіддю протягом дня.</p>
+												<div class="contact-quick-links">
+													<a class="contact-telegram" href="https://t.me/username" target="_blank" rel="noreferrer" aria-label="Написати в Telegram">
+														<svg viewBox="0 0 24 24" width="31" height="31" aria-hidden="true" focusable="false">
+															<path fill="currentColor" d="M9.78 15.65 9.4 20.5c.54 0 .78-.23 1.07-.5l2.57-2.46 5.33 3.9c.98.55 1.67.26 1.93-.9L23.8 4.1h0c.31-1.45-.52-2.02-1.47-1.66L1.7 10.4c-1.4.55-1.37 1.33-.24 1.68l5.28 1.65L19 6.04c.58-.35 1.1-.16.66.22" />
+														</svg>
+													</a>
+													<a class="contact-email" href="mailto:hello@example.com" aria-label="Написати на email">
+														<svg viewBox="0 0 24 24" width="29" height="29" aria-hidden="true" focusable="false">
+															<path fill="currentColor" d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1-.25 6.46 5.16a.7.7 0 0 0 .88 0L18.9 6.5H5.1Zm13.9 1.79-5.68 4.54a2.1 2.1 0 0 1-2.64 0L5 8.29v8.96c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V8.29Z" />
+														</svg>
+													</a>
+												</div>
+											</div>
+											<form class="contact-form contact-form-modern" action="#" method="post">
+												<div class="contact-field">
+													<label for="contact-info">Email або Telegram</label>
+													<input id="contact-info" name="contact" type="text" placeholder="you@email.com / @username" required />
+												</div>
+												<div class="contact-field">
+													<label for="name">Ім'я</label>
+													<input id="name" name="name" type="text" placeholder="Ваше ім'я" required />
+												</div>
+												<div class="contact-field contact-field-full contact-submit">
+													<button type="submit" class="btn btn-primary">Надіслати запит</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -540,6 +542,36 @@ import '../styles/global.css';
 				requestAnimationFrame(animateTabs);
 			}
 
+			const sectionsToReveal = document.querySelectorAll('main > section');
+			if (sectionsToReveal.length) {
+				const revealItems = Array.from(sectionsToReveal);
+				const revealAll = () => {
+					revealItems.forEach((section) => section.classList.add('is-revealed'));
+				};
+
+				revealItems.forEach((section) => section.classList.add('reveal-on-scroll'));
+				const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+					revealAll();
+				} else {
+					const sectionObserver = new IntersectionObserver(
+						(entries, observer) => {
+							entries.forEach((entry) => {
+								if (!entry.isIntersecting) return;
+								entry.target.classList.add('is-revealed');
+								observer.unobserve(entry.target);
+							});
+						},
+						{
+							threshold: 0.18,
+							rootMargin: '0px 0px -8% 0px'
+						}
+					);
+
+					revealItems.forEach((section) => sectionObserver.observe(section));
+				}
+			}
+
 			const processItems = document.querySelectorAll('.process-item[data-step]');
 			const processPanels = document.querySelectorAll('.process-preview-panel[data-step-panel]');
 			if (processItems.length && processPanels.length) {
@@ -551,7 +583,8 @@ import '../styles/global.css';
 				const lastPanel = panels[panels.length - 1];
 				let activeStep = '1';
 				const triggerRatio = 0.7; // switch when item reaches lower-mid viewport
-				const edgeToggleOffset = 300; // px to scroll before edge hide/show toggles
+				const startEdgeToggleOffset = 150; // px to scroll before start edge hide/show toggles
+				const endEdgeToggleOffset = 450; // px to scroll before end edge hide/show toggles
 				let lastScrollY = window.scrollY;
 				let isStartHidden = true;
 				let isEndHidden = false;
@@ -592,8 +625,8 @@ import '../styles/global.css';
 					const sectionRect = processSection.getBoundingClientRect();
 					const scrolledInsideSection = Math.max(0, -sectionRect.top);
 					const scrolledPastSection = Math.max(0, window.innerHeight - sectionRect.bottom);
-					const shouldHideStart = scrolledInsideSection < edgeToggleOffset;
-					const shouldHideEnd = scrolledPastSection > edgeToggleOffset;
+					const shouldHideStart = scrolledInsideSection < startEdgeToggleOffset;
+					const shouldHideEnd = scrolledPastSection > endEdgeToggleOffset;
 
 					if (shouldHideStart !== isStartHidden) {
 						isStartHidden = shouldHideStart;
