@@ -217,36 +217,37 @@ import '../styles/global.css';
 					Простий і передбачуваний процес без зайвих етапів. На кожному кроці ви розумієте, що
 					відбувається і який наступний крок.
 				</p>
+				<div class="process-layout">
 				<ol class="process-list">
-					<li class="process-item">
+					<li class="process-item is-active" data-step="1">
 						<p class="process-step">Крок 1</p>
 						<h3 class="process-title">Короткий бриф і уточнення задачі</h3>
 						<p class="process-text">
 							Ви описуєте цілі сайту, а я ставлю точні питання, щоб одразу зафіксувати обсяг роботи.
 						</p>
 					</li>
-					<li class="process-item">
+					<li class="process-item" data-step="2">
 						<p class="process-step">Крок 2</p>
 						<h3 class="process-title">Структура сторінки або сайту</h3>
 						<p class="process-text">
 							Погоджуємо логіку секцій, контентні блоки і порядок подачі, щоб сайт легко читався.
 						</p>
 					</li>
-					<li class="process-item">
+					<li class="process-item" data-step="3">
 						<p class="process-step">Крок 3</p>
 						<h3 class="process-title">Верстка у Webflow</h3>
 						<p class="process-text">
 							Збираю сайт по блоках з адаптивом і чистими стилями. Ви бачите проміжний прогрес.
 						</p>
 					</li>
-					<li class="process-item">
+					<li class="process-item" data-step="4">
 						<p class="process-step">Крок 4</p>
 						<h3 class="process-title">Фінальні правки і перевірка</h3>
 						<p class="process-text">
 							Вношу узгоджені правки, перевіряю базову SEO-структуру та загальну акуратність сторінок.
 						</p>
 					</li>
-					<li class="process-item">
+					<li class="process-item" data-step="5">
 						<p class="process-step">Крок 5</p>
 						<h3 class="process-title">Публікація і передача</h3>
 						<p class="process-text">
@@ -254,6 +255,51 @@ import '../styles/global.css';
 						</p>
 					</li>
 				</ol>
+				<div class="process-preview">
+					<div class="process-preview-frame" aria-live="polite">
+						<div class="process-preview-panel is-active" data-step-panel="1">
+							<img
+								class="process-preview-image"
+								src="/images/process/process-step-1-brief.png"
+								alt="Крок 1: підготовка і бриф"
+								loading="lazy"
+							/>
+						</div>
+						<div class="process-preview-panel" data-step-panel="2">
+							<img
+								class="process-preview-image"
+								src="/images/process/process-step-2-structure.png"
+								alt="Крок 2: структура сайту"
+								loading="lazy"
+							/>
+						</div>
+						<div class="process-preview-panel" data-step-panel="3">
+							<img
+								class="process-preview-image"
+								src="/images/process/process-step-3-build.png"
+								alt="Крок 3: верстка у Webflow"
+								loading="lazy"
+							/>
+						</div>
+						<div class="process-preview-panel" data-step-panel="4">
+							<img
+								class="process-preview-image"
+								src="/images/process/process-step-4-review-seo.png"
+								alt="Крок 4: фінальні правки"
+								loading="lazy"
+							/>
+						</div>
+						<div class="process-preview-panel" data-step-panel="5">
+							<img
+								class="process-preview-image"
+								src="/images/process/process-step-5-launch.png"
+								alt="Крок 5: публікація і запуск"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				</div>
+				</div>
 						</div>
 					</div>
 				</div>
@@ -492,6 +538,107 @@ import '../styles/global.css';
 				};
 
 				requestAnimationFrame(animateTabs);
+			}
+
+			const processItems = document.querySelectorAll('.process-item[data-step]');
+			const processPanels = document.querySelectorAll('.process-preview-panel[data-step-panel]');
+			if (processItems.length && processPanels.length) {
+				const processSection = document.getElementById('process');
+				const processPreview = document.querySelector('.process-preview');
+				const items = Array.from(processItems);
+				const panels = Array.from(processPanels);
+				const firstPanel = panels[0];
+				const lastPanel = panels[panels.length - 1];
+				let activeStep = '1';
+				const triggerRatio = 0.7; // switch when item reaches lower-mid viewport
+				const edgeToggleOffset = 300; // px to scroll before edge hide/show toggles
+				let lastScrollY = window.scrollY;
+				let isStartHidden = true;
+				let isEndHidden = false;
+
+				if (processPreview) {
+					processPreview.classList.add('is-start-hidden');
+				}
+
+				const setProcessStep = (step, direction = 'down') => {
+					if (!step || step === activeStep) return;
+					activeStep = step;
+
+					items.forEach((item) => {
+						const isActive = item.getAttribute('data-step') === step;
+						item.classList.toggle('is-active', isActive);
+					});
+
+					panels.forEach((panel) => {
+						const isActive = panel.getAttribute('data-step-panel') === step;
+						panel.classList.toggle('is-active', isActive);
+						panel.classList.remove('is-forward', 'is-reverse');
+						if (isActive) {
+							panel.classList.add(direction === 'up' ? 'is-reverse' : 'is-forward');
+						}
+					});
+				};
+
+				const triggerPanelReveal = (panel, direction) => {
+					if (!panel) return;
+					panel.classList.remove('is-forward', 'is-reverse');
+					// Force animation restart when toggling hidden state
+					void panel.offsetWidth;
+					panel.classList.add(direction === 'up' ? 'is-reverse' : 'is-forward');
+				};
+
+				const syncEdgeProcessImageVisibility = (direction) => {
+					if (!processSection || !processPreview) return;
+					const sectionRect = processSection.getBoundingClientRect();
+					const scrolledInsideSection = Math.max(0, -sectionRect.top);
+					const scrolledPastSection = Math.max(0, window.innerHeight - sectionRect.bottom);
+					const shouldHideStart = scrolledInsideSection < edgeToggleOffset;
+					const shouldHideEnd = scrolledPastSection > edgeToggleOffset;
+
+					if (shouldHideStart !== isStartHidden) {
+						isStartHidden = shouldHideStart;
+						processPreview.classList.toggle('is-start-hidden', shouldHideStart);
+						if (!shouldHideStart) triggerPanelReveal(firstPanel, direction);
+					}
+
+					if (shouldHideEnd !== isEndHidden) {
+						isEndHidden = shouldHideEnd;
+						processPreview.classList.toggle('is-end-hidden', shouldHideEnd);
+						if (!shouldHideEnd) triggerPanelReveal(lastPanel, direction);
+					}
+				};
+
+				const updateStepOnScroll = () => {
+					const currentScrollY = window.scrollY;
+					const direction = currentScrollY < lastScrollY ? 'up' : 'down';
+					lastScrollY = currentScrollY;
+					syncEdgeProcessImageVisibility(direction);
+					const viewportAnchor = window.innerHeight * triggerRatio;
+					const lastItem = items[items.length - 1];
+
+					// Lock to the 5th step exactly when it reaches viewport center.
+					if (lastItem) {
+						const lastRect = lastItem.getBoundingClientRect();
+						if (lastRect.top <= viewportAnchor) {
+							const lastStep = lastItem.getAttribute('data-step');
+							if (lastStep) setProcessStep(lastStep, direction);
+							return;
+						}
+					}
+
+					let currentItem = items[0];
+					items.forEach((item) => {
+						const rect = item.getBoundingClientRect();
+						if (rect.top <= viewportAnchor) currentItem = item;
+					});
+
+					const step = currentItem.getAttribute('data-step');
+					if (step) setProcessStep(step, direction);
+				};
+
+				updateStepOnScroll();
+				window.addEventListener('scroll', updateStepOnScroll, { passive: true });
+				window.addEventListener('resize', updateStepOnScroll);
 			}
 
 		</script>
