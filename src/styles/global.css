@@ -17,7 +17,7 @@
   --color-accent-hover: #818cf8;
   --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --space: 1rem;
-  --radius: 8px;
+  --radius: 0.5rem;
 }
 
 html {
@@ -54,7 +54,7 @@ a:not(.btn):hover {
 /* --- Шапка --- */
 .header {
   background: #080808;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 0.0625rem solid var(--color-divider);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -76,7 +76,7 @@ a:not(.btn):hover {
 
 .logo img {
   display: block;
-  height: 17px;
+  height: 1.0625rem;
   width: auto;
 }
 
@@ -107,9 +107,9 @@ a:not(.btn):hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
+  gap: 0.3125rem;
+  width: 2.25rem;
+  height: 2.25rem;
   padding: 0;
   border: none;
   background: transparent;
@@ -119,15 +119,15 @@ a:not(.btn):hover {
 
 .menu-toggle span {
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 1.375rem;
+  height: 0.125rem;
   background: currentColor;
-  border-radius: 1px;
+  border-radius: 0.0625rem;
 }
 
 .container {
   width: 100%;
-  max-width: 1760px;
+  max-width: 110rem;
   margin: 0 auto;
   padding-inline: 1.5rem;
 }
@@ -141,10 +141,10 @@ a:not(.btn):hover {
   background: var(--color-surface);
   flex-direction: column;
   padding: 1rem;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 0.0625rem solid var(--color-divider);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 40rem) {
   .nav-list {
     display: flex;
     position: static;
@@ -249,7 +249,7 @@ main {
   padding: 0.82rem 1.45rem;
   font-size: 0.96rem;
   font-weight: 600;
-  border: 1px solid transparent;
+  border: 0.0625rem solid transparent;
   border-radius: 0.4rem;
   cursor: pointer;
   transition: background 0.2s, transform 0.1s, border-color 0.2s, color 0.2s;
@@ -265,13 +265,13 @@ main {
   background: #1f6fff;
   border-color: #1f6fff;
   color: white;
-  box-shadow: 0 8px 22px rgba(31, 111, 255, 0.22);
+  box-shadow: 0 0.5rem 1.375rem rgba(31, 111, 255, 0.22);
 }
 
 .btn-primary:hover {
   background: #2f7cff;
   border-color: #2f7cff;
-  box-shadow: 0 10px 24px rgba(47, 124, 255, 0.24);
+  box-shadow: 0 0.625rem 1.5rem rgba(47, 124, 255, 0.24);
 }
 
 .btn-secondary {
@@ -285,7 +285,7 @@ main {
   background: rgba(255, 255, 255, 0.04);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) {
   .hero-actions .btn {
     width: 100%;
     text-align: center;
@@ -302,7 +302,7 @@ main {
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(44px);
+  transform: translateY(2.75rem);
   transition: opacity 0.68s cubic-bezier(0.22, 0.7, 0.2, 1), transform 0.68s cubic-bezier(0.22, 0.7, 0.2, 1);
   will-change: opacity, transform;
 }
@@ -325,7 +325,7 @@ main > section + section {
 }
 
 .section h2 {
-  font-size: 56px;
+  font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -365,13 +365,15 @@ main > section + section {
 }
 
 .service-title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.2;
+  margin-top: 2.5rem;
 }
 
 .service-text {
   font-size: 1rem;
   color: var(--color-text);
+  margin-top: 1.5rem;
 }
 
 .service-icon-slot {
@@ -395,14 +397,6 @@ main > section + section {
   grid-column: 1;
 }
 
-.service-title {
-  margin-top: 2.5rem;
-}
-
-.service-text {
-  margin-top: 1.5rem;
-}
-
 .process-list {
   padding: 0;
   list-style: none;
@@ -416,7 +410,7 @@ main > section + section {
 }
 
 .process .section-intro {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   max-width: 64ch;
 }
@@ -448,13 +442,13 @@ main > section + section {
 }
 
 .process-title {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
 .process-text {
   margin-top: 1.5rem;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--color-muted);
 }
 
@@ -465,9 +459,9 @@ main > section + section {
 .process-preview-frame {
   position: relative;
   width: 100%;
-  min-height: clamp(260px, 48vw, 560px);
+  min-height: clamp(16.25rem, 48vw, 35rem);
   border: none;
-  border-radius: 14px;
+  border-radius: 0.875rem;
   overflow: hidden;
   background: transparent;
 }
@@ -572,9 +566,9 @@ main > section + section {
 
 .work-preview-frame {
   width: 100%;
-  min-height: clamp(260px, 48vw, 560px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 14px;
+  min-height: clamp(16.25rem, 48vw, 35rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.875rem;
   background: transparent;
   position: relative;
   overflow: hidden;
@@ -588,7 +582,7 @@ main > section + section {
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(14px);
+  transform: translateY(0.875rem);
   transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
 }
 
@@ -642,7 +636,7 @@ main > section + section {
   left: 0;
   top: 0;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background: rgba(255, 255, 255, 0.22);
 }
 
@@ -652,7 +646,7 @@ main > section + section {
   left: 0;
   top: 0;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background: rgba(255, 255, 255, 0.95);
   transform: scaleX(var(--tab-progress));
   transform-origin: left center;
@@ -665,7 +659,7 @@ main > section + section {
 }
 
 .work-type-desc {
-  font-size: 16px;
+  font-size: 1rem;
   color: #ffffff;
 }
 
@@ -697,15 +691,15 @@ main > section + section {
 }
 
 .process {
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 0.0625rem solid var(--color-divider);
 }
 
 .services {
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: 0.0625rem solid var(--color-divider);
 }
 
 .services .section-pad {
-  padding-bottom: 120px;
+  padding-bottom: 7.5rem;
 }
 
 .about-copy {
@@ -755,11 +749,11 @@ main > section + section {
 }
 
 .about-photo {
-  border: 1px solid #2062ff;
+  border: 0.0625rem solid #2062ff;
   border-radius: 0.7rem;
   overflow: hidden;
   background: #0d1220;
-  box-shadow: 0 0 0 1px rgba(58, 130, 255, 0.18), 0 10px 30px rgba(8, 12, 24, 0.45);
+  box-shadow: 0 0 0 0.0625rem rgba(58, 130, 255, 0.18), 0 0.625rem 1.875rem rgba(8, 12, 24, 0.45);
 }
 
 .about-photo-wide {
@@ -794,8 +788,8 @@ main > section + section {
 
 .blog-card {
   background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: calc(var(--radius) + 2px);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.08);
+  border-radius: calc(var(--radius) + 0.125rem);
   padding: 1rem;
   display: grid;
   gap: 0.45rem;
@@ -861,11 +855,7 @@ main > section + section {
 .contact-title {
   max-width: none;
   line-height: 1.03;
-  font-size: 40px;
-}
-
-.contact .contact-title {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .contact-intro {
@@ -883,7 +873,7 @@ main > section + section {
   justify-content: center;
   width: 3.2rem;
   height: 3.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.24);
   border-radius: 0.55rem;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.04);
@@ -906,7 +896,7 @@ main > section + section {
   justify-content: center;
   width: 3.2rem;
   height: 3.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.24);
   border-radius: 0.55rem;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.04);
@@ -926,7 +916,7 @@ main > section + section {
 
 .contact-form-modern {
   background: rgba(8, 12, 28, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.22);
   border-radius: 0.9rem;
   padding: 0.85rem;
   display: grid;
@@ -949,7 +939,7 @@ main > section + section {
 .contact-field input {
   width: 100%;
   min-height: 2.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.18);
   border-radius: 0.55rem;
   background: rgba(255, 255, 255, 0.98);
   color: #111827;
@@ -964,7 +954,7 @@ main > section + section {
 .contact-field input:focus {
   outline: none;
   border-color: #1f6fff;
-  box-shadow: 0 0 0 2px rgba(31, 111, 255, 0.2);
+  box-shadow: 0 0 0 0.125rem rgba(31, 111, 255, 0.2);
 }
 
 .contact-submit .btn {
@@ -975,9 +965,9 @@ main > section + section {
   padding-bottom: clamp(4.5rem, 10vw, 8rem);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 45rem) {
   .about-layout {
-    grid-template-columns: minmax(0, 0.9fr) minmax(520px, 760px);
+    grid-template-columns: minmax(0, 0.9fr) minmax(32.5rem, 47.5rem);
     gap: clamp(1.5rem, 3.2vw, 3rem);
     align-items: center;
   }
@@ -985,9 +975,9 @@ main > section + section {
   .about-visual {
     position: relative;
     display: block;
-    width: min(100%, 760px);
+    width: min(100%, 47.5rem);
     margin-inline: auto 0;
-    min-height: clamp(320px, 33vw, 450px);
+    min-height: clamp(20rem, 33vw, 28.125rem);
   }
 
   .about-photo {
@@ -1026,7 +1016,7 @@ main > section + section {
   }
 
   .contact-layout {
-    grid-template-columns: minmax(0, 1.1fr) minmax(420px, 620px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(26.25rem, 38.75rem);
     gap: clamp(1.6rem, 3.6vw, 3.6rem);
   }
 
@@ -1041,7 +1031,7 @@ main > section + section {
 
 }
 
-@media (max-width: 719px) {
+@media (max-width: 44.9375rem) {
   .about-title {
     max-width: 12ch;
   }
@@ -1052,15 +1042,15 @@ main > section + section {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .process-preview {
-    --process-preview-height: clamp(340px, 38vw, 540px);
+    --process-preview-height: clamp(21.25rem, 38vw, 33.75rem);
   }
 
   .process-layout {
     display: flex;
     justify-content: center;
-    gap: 120px;
+    gap: 7.5rem;
     align-items: center;
   }
 
@@ -1083,8 +1073,8 @@ main > section + section {
   }
 
   .process-preview {
-    flex: 0 0 700px;
-    width: 700px;
+    flex: 0 0 43.75rem;
+    width: 43.75rem;
     position: sticky;
     top: calc(50vh - (var(--process-preview-height) / 2));
     align-self: start;
@@ -1122,16 +1112,16 @@ main > section + section {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 43.75rem) {
   .work-preview-frame {
-    min-height: 220px;
+    min-height: 13.75rem;
   }
 }
 
 /* --- Підвал --- */
 .footer {
   background: transparent;
-  border-top: 1px solid var(--color-divider);
+  border-top: 0.0625rem solid var(--color-divider);
   padding-block: 3rem 1.5rem;
 }
 
@@ -1153,7 +1143,7 @@ main > section + section {
 
 .footer-logo img {
   display: block;
-  height: 15px;
+  height: 0.9375rem;
   width: auto;
 }
 
@@ -1174,7 +1164,7 @@ main > section + section {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--color-divider);
+  border-top: 0.0625rem solid var(--color-divider);
   padding-top: 0.9rem;
   display: flex;
   justify-content: space-between;
