@@ -22,32 +22,30 @@ import '../styles/global.css';
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Розробка сайтів на Webflow під ключ" />
 		<meta property="og:description" content="Розробляю сайти на Webflow — лендинги, бізнес-сайти та багатосторінкові проєкти. Акуратна верстка, чітка структура, зрозумілий процес." />
-		<meta property="og:image" content="/images/opnegraph-home-page.jpg" />
+		<meta property="og:image" content="/images/opnegraph-home-page.avif" />
 		<meta property="og:locale" content="uk_UA" />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="Розробка сайтів на Webflow під ключ" />
 		<meta name="twitter:description" content="Розробляю сайти на Webflow — лендинги, бізнес-сайти та багатосторінкові проєкти. Акуратна верстка, чітка структура, зрозумілий процес." />
-		<meta name="twitter:image" content="/images/opnegraph-home-page.jpg" />
+		<meta name="twitter:image" content="/images/opnegraph-home-page.avif" />
 
 		<title>Розробка сайтів на Webflow під ключ</title>
 	</head>
 	<body>
 		<header class="header">
 			<nav class="nav container">
-				<a href="/" class="logo"><img src="/images/logo-large.svg" alt="Webflow Dev" width="196" height="17" /></a>
+				<a href="/" class="logo-text" aria-label="На головну">
+					<img src="/images/logo-large.svg" alt="Станіслав Астахов" class="logo-image" loading="lazy" />
+				</a>
 				<ul class="nav-list" id="nav-list">
-					<li><a href="#hero">Головна</a></li>
-					<li><a href="#services">Послуги</a></li>
-					<li><a href="#process">Процес</a></li>
 					<li><a href="#work">Роботи</a></li>
 					<li><a href="#about">Про мене</a></li>
-					<li><a href="#blog">Блог</a></li>
-					<li><a href="#contact">Контакт</a></li>
+					<li><a href="#process">Сертифікації</a></li>
 				</ul>
 				<div class="nav-actions">
-					<a href="#contact" class="btn btn-primary nav-cta">Обговорити проєкт</a>
+					<a class="nav-contact-link" href="#footer-contact">Контакт</a>
 					<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
 						<span></span>
 						<span></span>
@@ -68,7 +66,7 @@ import '../styles/global.css';
 					Берусь за задачу, роблю, здаю. Все просто.
 				</h3>
 				<div class="hero-actions">
-					<a href="#contact" class="btn btn-primary">Обговорити проєкт</a>
+					<a href="#footer-contact" class="btn btn-primary">Обговорити проєкт</a>
 				</div>
 						</div>
 					</div>
@@ -158,7 +156,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">Figma → Webflow</h3>
 						<p class="service-text">
-							Ваш макет стає робочим сайтом. Pixel-perfect верстка, повний адаптив під всі екрани і чиста структура класів — без компромісів і без зайвого коду. Результат виглядає рівно так, як задумано в дизайні.
+							Ваш макет стає робочим сайтом: pixel-perfect верстка, адаптив під всі екрани й чиста структура. Результат виглядає саме так, як у дизайні.
 						</p>
 					</article>
 					<article class="service-card">
@@ -167,7 +165,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">Кастомна розробка</h3>
 						<p class="service-text">
-							Жодних шаблонів. Кожен блок зібраний під вашу задачу з нуля — з анімаціями, взаємодіями і CMS там, де це дійсно потрібно. Сайт працює на ваш бізнес, а не виглядає як черговий клон.
+							Жодних шаблонів. Блоки збираються під вашу задачу з анімаціями, взаємодіями й CMS там, де це потрібно.
 						</p>
 					</article>
 					<article class="service-card">
@@ -176,7 +174,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">SEO on-page</h3>
 						<p class="service-text">
-							Мета-теги, заголовки, alt-тексти, sitemap, Open Graph і schema markup — повна базова SEO-структура з першого дня. Сайт одразу готовий до індексації й органічного трафіку без доробок.
+							Мета-теги, заголовки, alt, sitemap, Open Graph і schema markup. Сайт одразу готовий до індексації та органічного трафіку.
 						</p>
 					</article>
 					<article class="service-card">
@@ -185,7 +183,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">Оптимізація швидкості</h3>
 						<p class="service-text">
-							Мінімум зайвих стилів, стиснуті зображення, оптимізований код і lazy load. Сайт вантажиться швидко на будь-якому пристрої — без милиць, плагінів і зайвих скриптів.
+							Стиснуті зображення, оптимізований код і lazy load. Сайт швидко вантажиться на будь-якому пристрої без зайвих скриптів.
 						</p>
 					</article>
 					<article class="service-card">
@@ -194,7 +192,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">Client-First верстка</h3>
 						<p class="service-text">
-							Структура класів за методологією Client-First — індустріальний стандарт Webflow. Зрозуміло вам, зрозуміло будь-якому наступному розробнику. Сайт легко підтримувати і масштабувати роками.
+							Структура класів за методологією Client-First. Сайт зрозумілий, легко підтримується і масштабується без хаосу.
 						</p>
 					</article>
 					<article class="service-card">
@@ -203,7 +201,7 @@ import '../styles/global.css';
 						</div>
 						<h3 class="service-title">Запуск і масштабування</h3>
 						<p class="service-text">
-							Підключення домену, налаштування аналітики, дизайн-система і документація. Сайт повністю готовий до трафіку з першого дня і росте разом з вашим бізнесом без переробок.
+							Підключення домену, аналітики, дизайн-система й документація. Сайт готовий до трафіку з першого дня та росте разом з бізнесом.
 						</p>
 					</article>
 						</div>
@@ -211,98 +209,38 @@ import '../styles/global.css';
 				</div>
 			</section>
 
-			<section id="process" class="section process">
+			<section id="process" class="section process process-dark">
 				<div class="section-pad">
 					<div class="container">
-						<div class="section-content">
-				<h2>Як відбувається робота</h2>
-				<p class="section-intro">
-					Простий і передбачуваний процес без зайвих етапів. На кожному кроці ви розумієте, що
-					відбувається і який наступний крок.
-				</p>
-				<div class="process-layout">
-				<ol class="process-list">
-					<li class="process-item is-active" data-step="1">
-						<p class="process-step">Крок 1</p>
-						<h3 class="process-title">Короткий бриф і уточнення задачі</h3>
-						<p class="process-text">
-							Ви описуєте цілі сайту, а я ставлю точні питання, щоб одразу зафіксувати обсяг роботи.
-						</p>
-					</li>
-					<li class="process-item" data-step="2">
-						<p class="process-step">Крок 2</p>
-						<h3 class="process-title">Структура сторінки або сайту</h3>
-						<p class="process-text">
-							Погоджуємо логіку секцій, контентні блоки і порядок подачі, щоб сайт легко читався.
-						</p>
-					</li>
-					<li class="process-item" data-step="3">
-						<p class="process-step">Крок 3</p>
-						<h3 class="process-title">Верстка у Webflow</h3>
-						<p class="process-text">
-							Збираю сайт по блоках з адаптивом і чистими стилями. Ви бачите проміжний прогрес.
-						</p>
-					</li>
-					<li class="process-item" data-step="4">
-						<p class="process-step">Крок 4</p>
-						<h3 class="process-title">Фінальні правки і перевірка</h3>
-						<p class="process-text">
-							Вношу узгоджені правки, перевіряю базову SEO-структуру та загальну акуратність сторінок.
-						</p>
-					</li>
-					<li class="process-item" data-step="5">
-						<p class="process-step">Крок 5</p>
-						<h3 class="process-title">Публікація і передача</h3>
-						<p class="process-text">
-							Підключаємо домен, запускаємо сайт і за потреби показую, як вносити зміни самостійно.
-						</p>
-					</li>
-				</ol>
-				<div class="process-preview">
-					<div class="process-preview-frame" aria-live="polite">
-						<div class="process-preview-panel is-active" data-step-panel="1">
-							<img
-								class="process-preview-image"
-								src="/images/process/process-step-1-brief.png"
-								alt="Крок 1: підготовка і бриф"
-								loading="lazy"
-							/>
-						</div>
-						<div class="process-preview-panel" data-step-panel="2">
-							<img
-								class="process-preview-image"
-								src="/images/process/process-step-2-structure.png"
-								alt="Крок 2: структура сайту"
-								loading="lazy"
-							/>
-						</div>
-						<div class="process-preview-panel" data-step-panel="3">
-							<img
-								class="process-preview-image"
-								src="/images/process/process-step-3-build.png"
-								alt="Крок 3: верстка у Webflow"
-								loading="lazy"
-							/>
-						</div>
-						<div class="process-preview-panel" data-step-panel="4">
-							<img
-								class="process-preview-image"
-								src="/images/process/process-step-4-review-seo.png"
-								alt="Крок 4: фінальні правки"
-								loading="lazy"
-							/>
-						</div>
-						<div class="process-preview-panel" data-step-panel="5">
-							<img
-								class="process-preview-image"
-								src="/images/process/process-step-5-launch.png"
-								alt="Крок 5: публікація і запуск"
-								loading="lazy"
-							/>
-						</div>
-					</div>
-				</div>
-				</div>
+						<div class="section-content process-shell">
+							<h2 class="process-heading">Етапи роботи</h2>
+							<div class="process-table" role="list">
+								<article class="process-row" role="listitem">
+									<span class="process-row-num">01</span>
+									<h3 class="process-row-title">Підготовка та структура</h3>
+									<p class="process-row-text">Узгоджую цілі, структуру і контентну логіку, щоб сайт одразу працював на задачу.</p>
+								</article>
+								<article class="process-row" role="listitem">
+									<span class="process-row-num">02</span>
+									<h3 class="process-row-title">Верстка та взаємодія</h3>
+									<p class="process-row-text">Реалізую дизайн у Webflow з адаптивом, анімаціями та чистою системою класів.</p>
+								</article>
+								<article class="process-row" role="listitem">
+									<span class="process-row-num">03</span>
+									<h3 class="process-row-title">Публікація та підтримка</h3>
+									<p class="process-row-text">Запускаю проєкт, підключаю домен і передаю сайт у стані готовності до росту.</p>
+								</article>
+								<article class="process-row" role="listitem">
+									<span class="process-row-num">04</span>
+									<h3 class="process-row-title">Оптимізація та SEO</h3>
+									<p class="process-row-text">Налаштовую базову SEO-структуру, перевіряю швидкість і технічну якість перед релізом.</p>
+								</article>
+								<article class="process-row" role="listitem">
+									<span class="process-row-num">05</span>
+									<h3 class="process-row-title">Передача і масштабування</h3>
+									<p class="process-row-text">Передаю доступи, пояснюю структуру і допомагаю масштабувати сайт після запуску.</p>
+								</article>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -326,7 +264,7 @@ import '../styles/global.css';
 							Беру на себе весь процес: структура, верстка в Webflow, базове SEO, передача і подальша
 							підтримка без хаосу в комунікації.
 						</p>
-						<a href="#contact" class="btn btn-primary about-cta">Обговорити проєкт</a>
+						<a href="#footer-contact" class="btn btn-primary about-cta">Обговорити проєкт</a>
 					</div>
 					<div class="about-visual" aria-hidden="true">
 						<div class="about-photo about-photo-wide">
@@ -360,7 +298,7 @@ import '../styles/global.css';
 						<p class="blog-text">
 							Просте порівняння платформ: коли Webflow дає перевагу, а коли краще обрати інший підхід.
 						</p>
-						<a href="#contact" class="blog-link">Читати статтю</a>
+						<a href="#footer-contact" class="blog-link">Читати статтю</a>
 					</article>
 					<article class="blog-card">
 						<p class="blog-meta">Бюджет • 5 хв читання</p>
@@ -368,7 +306,7 @@ import '../styles/global.css';
 						<p class="blog-text">
 							З чого складається ціна, як оцінити обсяг роботи і що впливає на фінальний бюджет.
 						</p>
-						<a href="#contact" class="blog-link">Читати статтю</a>
+						<a href="#footer-contact" class="blog-link">Читати статтю</a>
 					</article>
 					<article class="blog-card">
 						<p class="blog-meta">Старт проєкту • 4 хв читання</p>
@@ -376,57 +314,48 @@ import '../styles/global.css';
 						<p class="blog-text">
 							Короткий список матеріалів, які економлять час на запуску і роблять процес передбачуваним.
 						</p>
-						<a href="#contact" class="blog-link">Читати статтю</a>
+						<a href="#footer-contact" class="blog-link">Читати статтю</a>
 					</article>
 				</div>
 				<div class="blog-actions">
-					<a href="#contact" class="btn btn-secondary">Всі статті</a>
+					<a href="#footer-contact" class="btn btn-secondary">Всі статті</a>
 				</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="contact" class="section contact">
+			<section id="faq" class="section faq">
 				<div class="section-pad">
 					<div class="container">
-						<div class="section-content">
-							<div class="contact-hero-shell">
-								<div class="contact-hero-frame">
-									<div class="contact-hero-bg">
-										<div class="contact-layout">
-											<div class="contact-copy">
-												<h2 class="contact-title">Готові до запуску сайту без обмежень?</h2>
-												<p class="contact-intro">Напишіть контакт і ваше ім'я - я повернусь з відповіддю протягом дня.</p>
-												<div class="contact-quick-links">
-													<a class="contact-telegram" href="https://t.me/username" target="_blank" rel="noreferrer" aria-label="Написати в Telegram">
-														<svg viewBox="0 0 24 24" width="31" height="31" aria-hidden="true" focusable="false">
-															<path fill="currentColor" d="M9.78 15.65 9.4 20.5c.54 0 .78-.23 1.07-.5l2.57-2.46 5.33 3.9c.98.55 1.67.26 1.93-.9L23.8 4.1h0c.31-1.45-.52-2.02-1.47-1.66L1.7 10.4c-1.4.55-1.37 1.33-.24 1.68l5.28 1.65L19 6.04c.58-.35 1.1-.16.66.22" />
-														</svg>
-													</a>
-													<a class="contact-email" href="mailto:hello@example.com" aria-label="Написати на email">
-														<svg viewBox="0 0 24 24" width="29" height="29" aria-hidden="true" focusable="false">
-															<path fill="currentColor" d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.1-.25 6.46 5.16a.7.7 0 0 0 .88 0L18.9 6.5H5.1Zm13.9 1.79-5.68 4.54a2.1 2.1 0 0 1-2.64 0L5 8.29v8.96c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V8.29Z" />
-														</svg>
-													</a>
-												</div>
-											</div>
-											<form class="contact-form contact-form-modern" action="#" method="post">
-												<div class="contact-field">
-													<label for="contact-info">Email або Telegram</label>
-													<input id="contact-info" name="contact" type="text" placeholder="you@email.com / @username" required />
-												</div>
-												<div class="contact-field">
-													<label for="name">Ім'я</label>
-													<input id="name" name="name" type="text" placeholder="Ваше ім'я" required />
-												</div>
-												<div class="contact-field contact-field-full contact-submit">
-													<button type="submit" class="btn btn-primary">Надіслати запит</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
+						<div class="section-content faq-layout">
+							<p class="faq-kicker">[FAQ]</p>
+							<div class="faq-list" role="list">
+								<button type="button" class="faq-item" role="listitem" aria-label="How do you start a new project?" aria-expanded="false">
+									<span class="faq-question">How do you start a new project?</span>
+									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-answer">I start with a short discovery to clarify goals, audience, and page structure before production.</span>
+								</button>
+								<button type="button" class="faq-item" role="listitem" aria-label="What is your typical project timeline?" aria-expanded="false">
+									<span class="faq-question">What is your typical project timeline?</span>
+									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-answer">Most projects take 1-3 weeks depending on scope, number of pages, and feedback rounds.</span>
+								</button>
+								<button type="button" class="faq-item" role="listitem" aria-label="Do you handle both design and development?" aria-expanded="false">
+									<span class="faq-question">Do you handle both design and development?</span>
+									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-answer">Yes, I can cover both design execution and Webflow development in one workflow.</span>
+								</button>
+								<button type="button" class="faq-item" role="listitem" aria-label="Do you work with remote clients?" aria-expanded="false">
+									<span class="faq-question">Do you work with remote clients?</span>
+									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-answer">Yes, I work remotely and keep communication structured with clear milestones.</span>
+								</button>
+								<button type="button" class="faq-item" role="listitem" aria-label="Can I edit content myself after launch?" aria-expanded="false">
+									<span class="faq-question">Can I edit content myself after launch?</span>
+									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-answer">Absolutely, you will be able to edit text and CMS content without developer help.</span>
+								</button>
 							</div>
 						</div>
 					</div>
@@ -435,33 +364,52 @@ import '../styles/global.css';
 		</main>
 
 		<footer class="footer">
-			<div class="footer-inner container">
-				<div class="footer-brand">
-					<a href="#hero" class="footer-logo"><img src="/images/logo-large.svg" alt="Webflow Dev" width="196" height="17" /></a>
-					<p class="footer-text">Розробка сайтів на Webflow для бізнесу, фаундерів та спеціалістів.</p>
+			<div class="footer-shell container">
+				<div class="footer-intro" id="footer-contact">
+					<h2 class="footer-intro-title">Готові створювати досвід, що справді поєднує людей?</h2>
+					<form class="footer-intro-form" action="#" method="post">
+						<div class="footer-intro-field">
+							<span>Email або Telegram</span>
+							<input type="text" name="contact" placeholder="you@email.com / @username" required />
+						</div>
+						<div class="footer-intro-field">
+							<span>Ім'я</span>
+							<input type="text" name="name" placeholder="Ваше ім'я" required />
+						</div>
+						<button type="submit" class="footer-intro-submit">Надіслати запит</button>
+					</form>
 				</div>
 
-				<nav class="footer-nav" aria-label="Нижня навігація">
-					<a href="#services">Послуги</a>
-					<a href="#process">Процес</a>
-					<a href="#work">Роботи</a>
-					<a href="#blog">Блог</a>
-					<a href="#contact">Контакт</a>
-				</nav>
-
-				<div class="footer-contacts">
-					<a href="mailto:hello@example.com">hello@example.com</a>
-					<a href="https://t.me/username" target="_blank" rel="noreferrer">Telegram</a>
-					<a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-				</div>
-
-				<div class="footer-bottom">
-					<p class="footer-copy">&copy; 2026 Webflow Dev. All rights reserved.</p>
-					<div class="footer-langs" aria-label="Language switcher">
-						<a href="/" class="is-active">UK</a>
-						<span>/</span>
-						<a href="/en/">EN</a>
+				<div class="footer-top">
+					<div class="footer-col footer-col-links">
+						<a href="#hero" class="footer-name" aria-label="До початку сторінки">
+							<img src="/images/logo-large.svg" alt="Станіслав Астахов" class="logo-image" loading="lazy" />
+						</a>
+						<div class="footer-links-grid">
+							<div class="footer-links-group">
+								<p class="footer-label">Контакт</p>
+								<a class="footer-link" href="mailto:hello@example.com">hello@example.com</a>
+								<a class="footer-link" href="tel:+380000000000">+380 00 000 00 00</a>
+							</div>
+							<div class="footer-links-group">
+								<p class="footer-label">Соцмережі</p>
+								<a class="footer-link" href="https://www.webflow.com/" target="_blank" rel="noreferrer">Webflow Profile</a>
+								<a class="footer-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+								<a class="footer-link" href="https://t.me/username" target="_blank" rel="noreferrer">Telegram</a>
+							</div>
+						</div>
 					</div>
+					<div class="footer-col footer-col-right">
+						<a href="#hero" class="footer-back">Назад догори ↑</a>
+					</div>
+					<div class="footer-col footer-col-copy">
+						<p class="footer-copy">Авторські права © 2026</p>
+					</div>
+				</div>
+			</div>
+			<div class="footer-display-wrap">
+				<div class="container">
+					<p class="footer-display">Webflow Dev</p>
 				</div>
 			</div>
 		</footer>
@@ -479,9 +427,29 @@ import '../styles/global.css';
 				});
 			}
 
+			let headerLastScrollY = window.scrollY;
+			const headerShowThreshold = 12;
 			const syncHeaderOnScroll = () => {
 				if (!header) return;
-				header.classList.toggle('is-scrolled', window.scrollY > 24);
+				const currentScrollY = window.scrollY;
+				const isScrolled = currentScrollY > 24;
+				header.classList.toggle('is-scrolled', isScrolled);
+
+				if (currentScrollY <= 8) {
+					header.classList.remove('is-hidden');
+					headerLastScrollY = currentScrollY;
+					return;
+				}
+
+				const delta = currentScrollY - headerLastScrollY;
+				const isMenuOpen = navList?.classList.contains('is-open');
+				if (!isMenuOpen && delta > headerShowThreshold) {
+					header.classList.add('is-hidden');
+				} else if (delta < -headerShowThreshold) {
+					header.classList.remove('is-hidden');
+				}
+
+				headerLastScrollY = currentScrollY;
 			};
 
 			syncHeaderOnScroll();
@@ -549,6 +517,23 @@ import '../styles/global.css';
 				};
 
 				requestAnimationFrame(animateTabs);
+			}
+
+			const faqItems = document.querySelectorAll('.faq-item');
+			if (faqItems.length) {
+				faqItems.forEach((item) => {
+					item.addEventListener('click', () => {
+						const isOpen = item.classList.contains('is-open');
+						faqItems.forEach((other) => {
+							other.classList.remove('is-open');
+							other.setAttribute('aria-expanded', 'false');
+						});
+						if (!isOpen) {
+							item.classList.add('is-open');
+							item.setAttribute('aria-expanded', 'true');
+						}
+					});
+				});
 			}
 
 			const processItems = document.querySelectorAll('.process-item[data-step]');
