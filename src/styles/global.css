@@ -332,7 +332,17 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(120% 80% at 50% 0%, rgba(31, 111, 255, 0.22) 0%, rgba(31, 111, 255, 0.12) 32%, rgba(31, 111, 255, 0) 50%);
+  background:
+    radial-gradient(120% 140% at 10% 0%, rgba(37, 99, 235, 0.5) 0%, rgba(15, 23, 42, 0.9) 40%, transparent 70%),
+    radial-gradient(120% 160% at 90% 100%, rgba(249, 115, 22, 0.5) 0%, rgba(15, 23, 42, 0.95) 40%, transparent 70%),
+    linear-gradient(
+      to bottom,
+      rgba(8, 8, 8, 0) 0%,
+      rgba(8, 8, 8, 0.15) 35%,
+      rgba(8, 8, 8, 0.45) 65%,
+      rgba(8, 8, 8, 0.75) 82%,
+      rgba(8, 8, 8, 1) 100%
+    );
   pointer-events: none;
 }
 
@@ -341,14 +351,13 @@ main {
   gap: 1.6rem;
   justify-items: center;
   text-align: center;
-  transform: translateY(-11vh);
 }
 
 .hero-kicker {
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: #1f6fff;
   font-weight: 700;
 }
 
@@ -367,7 +376,7 @@ main {
   line-height: 1.55;
   font-weight: 300;
   color: var(--color-text);
-  max-width: 52ch;
+  max-width: 43ch;
   text-wrap: pretty;
 }
 
@@ -376,6 +385,37 @@ main {
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.hero-scroll {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-scroll-link {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(10px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.hero-scroll-link:hover {
+  background: rgba(31, 111, 255, 0.18);
+  border-color: #1f6fff;
+  transform: translateY(2px);
+}
+
+.hero-scroll-icon {
+  font-size: 1.3rem;
+  line-height: 1;
 }
 
 .btn {
@@ -419,6 +459,152 @@ main {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, rgba(37, 99, 235, 0.5), transparent 60%), rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 160;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-shell {
+  position: relative;
+  width: 100%;
+  max-width: 32rem;
+  padding-inline: 1.5rem;
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.3rem;
+  padding: 1.9rem 1.8rem 1.7rem;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.65), rgba(37, 99, 235, 0.9)),
+    radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+  box-shadow:
+    0 1.6rem 3.8rem rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+}
+
+.modal-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(199, 210, 254, 0.9);
+}
+
+.modal-title {
+  margin-top: 0.7rem;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 650;
+}
+
+.modal-text {
+  margin-top: 0.7rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.96);
+}
+
+.modal-form {
+  margin-top: 1.3rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.modal-field {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.modal-field span {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(191, 219, 254, 0.9);
+}
+
+.modal-field input,
+.modal-field textarea {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font: inherit;
+  padding: 0.55rem 0.7rem;
+  resize: vertical;
+}
+
+.modal-field input::placeholder,
+.modal-field textarea::placeholder {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.modal-field input:focus,
+.modal-field textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.7);
+}
+
+.modal-submit {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.modal-note {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(191, 219, 254, 0.9);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -0.25rem;
+  margin-right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem rgba(15, 23, 42, 0.8);
+  transition: background 0.2s ease, transform 0.1s ease;
+  z-index: 2;
+}
+
+.modal-close span {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: rgba(31, 41, 55, 0.95);
+  transform: translateY(1px);
+}
+
 @media (max-width: 40rem) {
   .hero-actions .btn {
     width: 100%;
@@ -436,6 +622,14 @@ main {
 
 main > section + section {
   margin-top: 7.5rem;
+}
+
+.work .section-pad {
+  padding-top: 120px;
+}
+
+.work {
+  margin-top: 0;
 }
 
 .section h2 {
@@ -820,6 +1014,8 @@ main > section.section.faq {
 
 .faq-layout {
   gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .faq-kicker {
