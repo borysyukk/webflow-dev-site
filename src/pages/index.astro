@@ -477,7 +477,12 @@ import '../styles/global.css';
 						Залиште контакт і коротко опишіть задачу — я відповім з варіантами формату, термінами та орієнтовним
 						бюджетом.
 					</p>
-					<form class="modal-form">
+					<form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
+						<input type="hidden" name="access_key" value="718d01d8-a152-40c0-bd4e-e5b4d95f6962" />
+						<input type="hidden" name="subject" value="Нова заявка з модального вікна" />
+						<input type="hidden" name="from_name" value="Webflow Dev" />
+						<input type="hidden" name="redirect" value="" data-web3-redirect />
+						<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;" />
 						<label class="modal-field">
 							<span>Як з вами звʼязатися?</span>
 							<input type="text" name="contact" placeholder="Email, Telegram або інший контакт" required />
@@ -485,9 +490,10 @@ import '../styles/global.css';
 						<label class="modal-field">
 							<span>Що потрібно зробити?</span>
 							<textarea
-								name="project"
+								name="message"
 								rows="3"
 								placeholder="Лендинг, бізнес-сайт, редизайн, перенос на Webflow тощо"
+								required
 							></textarea>
 						</label>
 						<button type="submit" class="btn btn-primary modal-submit">Надіслати запит</button>
@@ -503,7 +509,12 @@ import '../styles/global.css';
 			<div class="footer-shell container">
 				<div class="footer-intro" id="footer-contact">
 					<h2 class="footer-intro-title">Готові створювати досвід, що справді поєднує людей?</h2>
-					<form class="footer-intro-form" action="#" method="post">
+					<form class="footer-intro-form" action="https://api.web3forms.com/submit" method="POST">
+						<input type="hidden" name="access_key" value="718d01d8-a152-40c0-bd4e-e5b4d95f6962" />
+						<input type="hidden" name="subject" value="Нова заявка з футера" />
+						<input type="hidden" name="from_name" value="Webflow Dev" />
+						<input type="hidden" name="redirect" value="" data-web3-redirect />
+						<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;" />
 						<div class="footer-intro-field">
 							<span>Email або Telegram</span>
 							<input type="text" name="contact" placeholder="you@email.com / @username" required />
@@ -791,6 +802,14 @@ import '../styles/global.css';
 			const modalOverlay = document.querySelector('.modal-overlay[data-modal-overlay="contact-modal"]');
 			const modalTriggers = document.querySelectorAll('[data-open-modal="contact-modal"]');
 			const modalCloseButtons = document.querySelectorAll('[data-close-modal]');
+			const web3RedirectFields = document.querySelectorAll('input[name="redirect"][data-web3-redirect]');
+
+			if (web3RedirectFields.length) {
+				const redirectUrl = `${window.location.origin}/thank-you`;
+				web3RedirectFields.forEach((field) => {
+					field.value = redirectUrl;
+				});
+			}
 
 			const openModal = () => {
 				if (!modalOverlay) return;
