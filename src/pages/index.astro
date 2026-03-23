@@ -37,15 +37,15 @@ import '../styles/global.css';
 		<header class="header">
 			<nav class="nav container">
 				<a href="/" class="logo-text" aria-label="На головну">
-					<img src="/images/logo-large.svg" alt="Станіслав Астахов" class="logo-image" loading="lazy" />
+					<img src="/images/logo-large.svg" alt="Логотип портфоліо" class="logo-image" loading="lazy" />
 				</a>
 				<ul class="nav-list" id="nav-list">
 					<li><a href="#work">Роботи</a></li>
+					<li><a href="#services">Послуги</a></li>
 					<li><a href="#about">Про мене</a></li>
-					<li><a href="#process">Сертифікації</a></li>
 				</ul>
 				<div class="nav-actions">
-					<a class="nav-contact-link" href="#footer-contact">Контакт</a>
+					<a class="nav-contact-link" href="#contact-modal" data-open-modal="contact-modal">Контакт</a>
 					<button type="button" class="menu-toggle" aria-label="Відкрити меню" id="menu-toggle">
 						<span></span>
 						<span></span>
@@ -82,75 +82,127 @@ import '../styles/global.css';
 				<div class="section-pad">
 					<div class="container">
 						<div class="section-content work-section">
-				<h2 class="work-heading">Проєкти</h2>
-				<p class="section-intro work-intro">
-					Роблю сайти на Webflow під ваш формат задачі: від лендингу до CMS-сайту.
-				</p>
+							<h2 class="work-heading">Проєкти</h2>
+							<p class="section-intro work-intro">
+								Окремі кейси та сайти, зібрані на Webflow — обирайте таб, щоб подивитися прев’ю.
+							</p>
 
-				<div class="work-preview-frame">
-					<div class="work-preview-panel is-active" data-panel="landing">
-						<img
-							class="work-preview-image"
-							src="/images/tab-content/original-e007cf174b7030ef3b9ece3cea0c69b1.webp"
-							alt="Прев'ю лендингу"
-							loading="lazy"
-						/>
-						<span>Лендинг з фокусом на заявку</span>
-					</div>
-					<div class="work-preview-panel" data-panel="business">
-						<img
-							class="work-preview-image"
-							src="/images/tab-content/original-12c002c69215970cd2eaf4824b287a4f.webp"
-							alt="Прев'ю бізнес-сайту"
-							loading="lazy"
-						/>
-						<span>Багатосторінковий бізнес-сайт</span>
-					</div>
-					<div class="work-preview-panel" data-panel="cms">
-						<img
-							class="work-preview-image"
-							src="/images/tab-content/original-1840e2de901619557990728c3e74a094.webp"
-							alt="Прев'ю CMS-сайту"
-							loading="lazy"
-						/>
-						<span>Сайт з CMS і блогом</span>
-					</div>
-					<div class="work-preview-panel" data-panel="redesign">
-						<img
-							class="work-preview-image"
-							src="/images/tab-content/original-25a987b5055b056376f5d1a10fad76c2.webp"
-							alt="Прев'ю редизайну"
-							loading="lazy"
-						/>
-						<span>Редизайн і перенос на Webflow</span>
-					</div>
-				</div>
+							<div class="work-preview-frame">
+								<div class="work-preview-panel is-active" data-panel="everest">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/everest%20sea-to-summit.jpg"
+										alt="Проєкт Everest Sea to Summit"
+										loading="lazy"
+									/>
+									<span>Everest Sea to Summit</span>
+								</div>
+								<div class="work-preview-panel" data-panel="frostbite">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/frostbite.jpg"
+										alt="Проєкт Frostbite"
+										loading="lazy"
+									/>
+									<span>Frostbite</span>
+								</div>
+								<div class="work-preview-panel" data-panel="mamba">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/mamba.kids.jpg"
+										alt="Проєкт Mamba Kids"
+										loading="lazy"
+									/>
+									<span>Mamba Kids</span>
+								</div>
+								<div class="work-preview-panel" data-panel="myrne-nebo">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/myrne%20nebo%20foundation.jpg"
+										alt="Проєкт Myrne Nebo Foundation"
+										loading="lazy"
+									/>
+									<span>Myrne Nebo Foundation</span>
+								</div>
+								<div class="work-preview-panel" data-panel="outreach">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/outreach%20academy%20by%20folderly.jpg"
+										alt="Проєкт Outreach Academy by Folderly"
+										loading="lazy"
+									/>
+									<span>Outreach Academy by Folderly</span>
+								</div>
+								<div class="work-preview-panel" data-panel="stand-ukraine">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/stand%20with%20ukraine%20foundation.jpg"
+										alt="Проєкт Stand with Ukraine Foundation"
+										loading="lazy"
+									/>
+									<span>Stand with Ukraine Foundation</span>
+								</div>
+								<div class="work-preview-panel" data-panel="wav-woman">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/wav%20woman%20shop.jpg"
+										alt="Проєкт WAV Woman Shop"
+										loading="lazy"
+									/>
+									<span>WAV Woman Shop</span>
+								</div>
+								<div class="work-preview-panel" data-panel="zensum">
+									<img
+										class="work-preview-image"
+										src="/images/tab-content/zensum%20bank.jpg"
+										alt="Проєкт Zensum Bank"
+										loading="lazy"
+									/>
+									<span>Zensum Bank</span>
+								</div>
+							</div>
 
-				<div class="work-types" role="tablist" aria-label="Типи сайтів">
-					<button type="button" class="work-type is-active" data-tab="landing" role="tab" aria-selected="true">
-						<span class="work-type-title">Лендинг</span>
-						<span class="work-type-desc">Одна сторінка з фокусом на заявку, чіткою структурою і сильним CTA.</span>
-					</button>
-					<button type="button" class="work-type" data-tab="business" role="tab" aria-selected="false">
-						<span class="work-type-title">Бізнес-сайт</span>
-						<span class="work-type-desc">Багатосторінковий сайт для послуг, кейсів та зрозумілої навігації.</span>
-					</button>
-					<button type="button" class="work-type" data-tab="cms" role="tab" aria-selected="false">
-						<span class="work-type-title">CMS-сайт</span>
-						<span class="work-type-desc">Webflow CMS для блогу, новин або кейсів з простим оновленням контенту.</span>
-					</button>
-					<button type="button" class="work-type" data-tab="redesign" role="tab" aria-selected="false">
-						<span class="work-type-title">Редизайн</span>
-						<span class="work-type-desc">Оновлення структури і візуалу без хаосу, з перенесенням на Webflow.</span>
-					</button>
-				</div>
+							<div class="work-types" role="tablist" aria-label="Проєкти — таби">
+								<button type="button" class="work-type is-active" data-tab="everest" role="tab" aria-selected="true">
+									<span class="work-type-title">Everest Sea to Summit</span>
+									<span class="work-type-desc">Лендинг, експедиція</span>
+								</button>
+								<button type="button" class="work-type" data-tab="frostbite" role="tab" aria-selected="false">
+									<span class="work-type-title">Frostbite</span>
+									<span class="work-type-desc">Корпоративний сайт</span>
+								</button>
+								<button type="button" class="work-type" data-tab="mamba" role="tab" aria-selected="false">
+									<span class="work-type-title">Mamba Kids</span>
+									<span class="work-type-desc">Магазин дитячого харчування</span>
+								</button>
+								<button type="button" class="work-type" data-tab="myrne-nebo" role="tab" aria-selected="false">
+									<span class="work-type-title">Myrne Nebo Foundation</span>
+									<span class="work-type-desc">Сайт фонду</span>
+								</button>
+								<button type="button" class="work-type" data-tab="outreach" role="tab" aria-selected="false">
+									<span class="work-type-title">Outreach Academy</span>
+									<span class="work-type-desc">B2B-академія, Folderly</span>
+								</button>
+								<button type="button" class="work-type" data-tab="stand-ukraine" role="tab" aria-selected="false">
+									<span class="work-type-title">Stand with Ukraine</span>
+									<span class="work-type-desc">Благодійний фонд</span>
+								</button>
+								<button type="button" class="work-type" data-tab="wav-woman" role="tab" aria-selected="false">
+									<span class="work-type-title">WAV Woman Shop</span>
+									<span class="work-type-desc">Інтернет-магазин</span>
+								</button>
+								<button type="button" class="work-type" data-tab="zensum" role="tab" aria-selected="false">
+									<span class="work-type-title">Zensum Bank</span>
+									<span class="work-type-desc">Банк, фінтех</span>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<section id="services" class="section services">
-				<div class="section-pad">
+				<div class="section-pad has-side-orbs">
 					<div class="container">
 						<div class="section-content services-layout">
 				<h2 class="services-heading">Від макету до запуску — все на Webflow</h2>
@@ -252,14 +304,14 @@ import '../styles/global.css';
 			</section>
 
 			<section id="about" class="section about">
-				<div class="section-pad">
+				<div class="section-pad has-side-orbs">
 					<div class="container">
 						<div class="section-content">
 				<div class="about-layout">
 					<div class="about-copy">
 						<p class="about-kicker">Про мене</p>
 						<h2 class="about-title">
-							👋 Мене звати Станіслав, я Webflow Developer.
+							👋 Я Webflow Developer.
 						</h2>
 						<p class="about-lead">
 							Працюю віддалено з клієнтами над сайтами, які швидко запускаються, зрозуміло презентують
@@ -271,17 +323,14 @@ import '../styles/global.css';
 						</p>
 						<a href="#contact-modal" class="btn btn-primary about-cta" data-open-modal="contact-modal">Обговорити проєкт</a>
 					</div>
-					<div class="about-visual" aria-hidden="true">
-						<div class="about-photo about-photo-wide">
-							<img src="/images/projects/project-business.svg" alt="" class="about-visual-image" loading="lazy" />
-						</div>
-						<div class="about-photo about-photo-tall">
-							<img src="/images/projects/project-cms.svg" alt="" class="about-visual-image" loading="lazy" />
-						</div>
-						<div class="about-photo about-photo-bottom">
-							<img src="/images/projects/project-landing.svg" alt="" class="about-visual-image" loading="lazy" />
-						</div>
-					</div>
+					<figure class="about-visual">
+						<img
+							src="/images/about-me/photo_2026-03-21_13-31-28.jpg"
+							alt="Фото для розділу Про мене, Webflow Developer"
+							class="about-portrait-image"
+							loading="lazy"
+						/>
+					</figure>
 				</div>
 					</div>
 				</div>
@@ -425,7 +474,7 @@ import '../styles/global.css';
 					<p class="modal-kicker">Форма запиту</p>
 					<h2 class="modal-title" id="contact-modal-title">Обговоримо ваш Webflow проєкт</h2>
 					<p class="modal-text">
-						Залиште контакт і коротко опишіть задачу — я відповім з варіантами формату, строками та орієнтовним
+						Залиште контакт і коротко опишіть задачу — я відповім з варіантами формату, термінами та орієнтовним
 						бюджетом.
 					</p>
 					<form class="modal-form">
@@ -470,7 +519,7 @@ import '../styles/global.css';
 				<div class="footer-top">
 					<div class="footer-col footer-col-links">
 						<a href="#hero" class="footer-name" aria-label="До початку сторінки">
-							<img src="/images/logo-large.svg" alt="Станіслав Астахов" class="logo-image" loading="lazy" />
+							<img src="/images/logo-large.svg" alt="Логотип портфоліо" class="logo-image" loading="lazy" />
 						</a>
 							<div class="footer-links-grid">
 							<div class="footer-links-group">
@@ -480,7 +529,16 @@ import '../styles/global.css';
 							</div>
 							<div class="footer-links-group">
 								<p class="footer-label">Месенджери</p>
-								<a class="footer-link" href="https://t.me/username" target="_blank" rel="noreferrer">Telegram</a>
+								<a
+									class="footer-link"
+									href="https://t.me/makella201"
+									target="_blank"
+									rel="noopener noreferrer"
+									title="https://t.me/makella201"
+									aria-label="Telegram @makella201"
+								>
+									Telegram
+								</a>
 							</div>
 						</div>
 					</div>
@@ -509,6 +567,13 @@ import '../styles/global.css';
 					const isOpen = navList.classList.contains('is-open');
 					navList.classList.toggle('is-open');
 					menuToggle.setAttribute('aria-label', isOpen ? 'Відкрити меню' : 'Закрити меню');
+				});
+
+				navList.querySelectorAll('a[href^="#"]').forEach((link) => {
+					link.addEventListener('click', () => {
+						navList.classList.remove('is-open');
+						menuToggle.setAttribute('aria-label', 'Відкрити меню');
+					});
 				});
 			}
 
