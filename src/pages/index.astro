@@ -13,7 +13,10 @@ import '../styles/global.css';
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Onest:wght@400..700&family=Source+Code+Pro:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 
 		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -75,7 +78,7 @@ import '../styles/global.css';
 									Розробляю швидкі, адаптивні та масштабовані Webflow сайти для бізнесу та стартапів.
 								</h3>
 								<div class="hero-actions">
-									<a href="#contact-modal" class="btn btn-primary" data-open-modal="contact-modal">Обговорити проєкт</a>
+									<a href="#contact-modal" class="btn" data-open-modal="contact-modal">Обговорити проєкт</a>
 								</div>
 								<div class="hero-scroll">
 									<a href="#work" class="hero-scroll-link" aria-label="Прокрутити до розділу «Проєкти»">
@@ -128,9 +131,12 @@ import '../styles/global.css';
 				<div class="section-pad">
 					<div class="container">
 						<div class="section-content work-section">
-							<h2 class="work-heading">Проєкти</h2>
-							<p class="section-intro work-intro">
-								Окремі кейси та сайти, зібрані на Webflow — обирайте таб, щоб подивитися прев’ю.
+							<div class="section-kicker">
+								<h2 class="section-kicker-title">Проєкти</h2>
+								<span class="section-kicker-line" aria-hidden="true"></span>
+							</div>
+							<p class="section-kicker-subtitle">
+								Показую частину кейсів і сайтів на Webflow — оберіть таб, щоб подивитися прев’ю.
 							</p>
 
 							<div class="work-preview-frame">
@@ -248,12 +254,35 @@ import '../styles/global.css';
 			</section>
 
 			<section id="services" class="section services">
-				<div class="section-pad has-side-orbs">
+				<div class="section-pad">
+					<img
+						class="services-decor"
+						src="/images/decorative-elements/_1%20%281%29.svg"
+						alt=""
+						aria-hidden="true"
+						loading="lazy"
+						decoding="async"
+					/>
 					<div class="container">
-						<div class="section-content services-layout">
-				<h2 class="services-heading">Від макету до запуску — все на Webflow</h2>
-				<div class="services-grid">
-					<article class="service-card">
+						<div class="section-content services-shell">
+							<div class="services-intro">
+								<h2 class="services-heading">Від макету до запуску — все на Webflow</h2>
+								<p class="services-subtitle">
+									Повний цикл у Webflow: від макета до публікації — з прозорою структурою класів і готовністю до росту.
+								</p>
+								<p class="services-cta">
+									<span class="services-cta-pulse" aria-hidden="true"></span>
+									<a
+										href="#contact-modal"
+										class="services-cta-link"
+										data-open-modal="contact-modal"
+									>
+										Отримати консультацію
+									</a>
+								</p>
+							</div>
+							<div class="services-grid" role="list">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/FigmaToWebflow%20%281%29%201.svg" alt="" loading="lazy" />
 						</div>
@@ -262,7 +291,7 @@ import '../styles/global.css';
 							Ваш макет стає робочим сайтом: pixel-perfect верстка, адаптив під всі екрани й чиста структура. Результат виглядає саме так, як у дизайні.
 						</p>
 					</article>
-					<article class="service-card">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/Code%20%281%29%201.svg" alt="" loading="lazy" />
 						</div>
@@ -271,7 +300,7 @@ import '../styles/global.css';
 							Жодних шаблонів. Блоки збираються під вашу задачу з анімаціями, взаємодіями й CMS там, де це потрібно.
 						</p>
 					</article>
-					<article class="service-card">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/seo.svg" alt="" loading="lazy" />
 						</div>
@@ -280,7 +309,7 @@ import '../styles/global.css';
 							Мета-теги, заголовки, alt, sitemap, Open Graph і schema markup. Сайт одразу готовий до індексації та органічного трафіку.
 						</p>
 					</article>
-					<article class="service-card">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/speed-optimization.svg" alt="" loading="lazy" />
 						</div>
@@ -289,7 +318,7 @@ import '../styles/global.css';
 							Стиснуті зображення, оптимізований код і lazy load. Сайт швидко вантажиться на будь-якому пристрої без зайвих скриптів.
 						</p>
 					</article>
-					<article class="service-card">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/Client-First.svg" alt="" loading="lazy" />
 						</div>
@@ -298,7 +327,7 @@ import '../styles/global.css';
 							Структура класів за методологією Client-First. Сайт зрозумілий, легко підтримується і масштабується без хаосу.
 						</p>
 					</article>
-					<article class="service-card">
+					<article class="service-card" role="listitem">
 						<div class="service-icon-slot" aria-hidden="true">
 							<img class="service-icon-image" src="/images/icon/launch-and-scale.svg" alt="" loading="lazy" />
 						</div>
@@ -307,18 +336,109 @@ import '../styles/global.css';
 							Підключення домену, аналітики, дизайн-система й документація. Сайт готовий до трафіку з першого дня та росте разом з бізнесом.
 						</p>
 					</article>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="process" class="section process">
+			<section id="my-services" class="section my-services">
+				<div class="section-pad">
+					<div class="container">
+						<div class="section-kicker section-kicker--two-lines">
+							<h2 class="section-kicker-title">Типи<br />сайтів</h2>
+							<span class="section-kicker-line" aria-hidden="true"></span>
+						</div>
+						<p class="section-kicker-subtitle">
+							Підберу формат під вашу задачу: від лендінгу до магазину — з адаптивом, швидкістю та базою під SEO.
+						</p>
+
+						<div class="my-services-shell">
+							<div class="my-services-grid">
+								<div class="my-services-sticky" aria-hidden="true">
+									<div class="my-services-media is-hidden" data-my-services-media>
+										<div class="my-services-media-inner">
+											<img
+												class="my-services-media-img"
+												src="/images/tab-content/everest sea-to-summit.avif"
+												alt=""
+												loading="lazy"
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="my-services-items">
+									<article class="my-service" data-my-service-image="/images/tab-content/everest sea-to-summit.avif">
+										<div class="my-service-body">
+											<h3 class="my-service-title">Landing page</h3>
+											<p class="my-service-desc">
+												Односторінковий сайт під продукт або послугу: чітка структура, акцент на дії та швидке завантаження.
+											</p>
+											<ul class="my-service-list">
+												<li>Секції під оффер і CTA</li>
+												<li>Анімації та взаємодії</li>
+												<li>Форма заявки / інтеграції</li>
+											</ul>
+										</div>
+									</article>
+
+									<article class="my-service" data-my-service-image="/images/tab-content/zensum bank.avif">
+										<div class="my-service-body">
+											<h3 class="my-service-title">Сайт-візитка</h3>
+											<p class="my-service-desc">
+												Компактний сайт для презентації бренду й послуг: ключова інформація, довіра та зручний контакт.
+											</p>
+											<ul class="my-service-list">
+												<li>Про вас / послуги</li>
+												<li>Портфоліо / відгуки</li>
+												<li>Контакти + форма</li>
+											</ul>
+										</div>
+									</article>
+
+									<article class="my-service" data-my-service-image="/images/tab-content/outreach academy by folderly.avif">
+										<div class="my-service-body">
+											<h3 class="my-service-title">Корпоративний сайт</h3>
+											<p class="my-service-desc">
+												Багатосторінковий сайт з логічною навігацією, структурою та єдиним стилем на всіх сторінках.
+											</p>
+											<ul class="my-service-list">
+												<li>Послуги / кейси / блог</li>
+												<li>CMS (за потреби)</li>
+												<li>SEO-структура</li>
+											</ul>
+										</div>
+									</article>
+
+									<article class="my-service" data-my-service-image="/images/tab-content/wav woman shop.avif">
+										<div class="my-service-body">
+											<h3 class="my-service-title">Інтернет-магазин</h3>
+											<p class="my-service-desc">
+												Каталог, картки товарів, кошик і базова логіка покупки — з охайною версткою та швидкою роботою сторінок.
+											</p>
+											<ul class="my-service-list">
+												<li>Каталог і фільтри</li>
+												<li>Кошик / checkout</li>
+												<li>Оплата / доставка (інтеграції)</li>
+											</ul>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="process" class="section process process--dark">
 				<div class="section-pad">
 					<div class="container">
 						<div class="section-content process-shell">
 							<div class="process-intro">
-								<h2 class="process-heading">Етапи роботи</h2>
-								<p class="process-subtitle">Теплий контакт і чіткий процес від першого повідомлення до запуску.</p>
+								<div class="section-kicker">
+									<h2 class="section-kicker-title">Етапи роботи</h2>
+								</div>
+								<p class="section-kicker-subtitle">Теплий контакт і чіткий процес від першого повідомлення до запуску.</p>
 							</div>
 							<div class="process-table" role="list">
 								<article class="process-row" role="listitem">
@@ -345,7 +465,7 @@ import '../styles/global.css';
 									<span class="process-row-num">05</span>
 									<h3 class="process-row-title">Передача і масштабування</h3>
 									<p class="process-row-text">Передаю доступи, пояснюю структуру і допомагаю масштабувати сайт після запуску.</p>
-									<a href="#contact-modal" class="process-final-cta" data-open-modal="contact-modal">Обговорити проєкт</a>
+									<a href="#contact-modal" class="btn" data-open-modal="contact-modal">Обговорити проєкт</a>
 								</article>
 							</div>
 						</div>
@@ -356,10 +476,13 @@ import '../styles/global.css';
 			<section id="about" class="section about">
 				<div class="section-pad">
 					<div class="container">
+						<div class="section-kicker section-kicker--two-lines">
+							<h2 class="section-kicker-title about-heading">Про<br />мене</h2>
+							<span class="section-kicker-line" aria-hidden="true"></span>
+						</div>
 						<div class="section-content">
 							<div class="about-layout">
 								<div class="about-copy">
-									<h2 class="about-heading">Про мене</h2>
 									<div class="about-body">
 										<div class="about-intro-block">
 											<figure class="about-visual">
@@ -493,7 +616,7 @@ import '../styles/global.css';
 					</article>
 				</div>
 				<div class="blog-actions">
-					<a href="#footer-contact" class="btn btn-secondary">Всі статті</a>
+					<a href="#footer-contact" class="btn">Всі статті</a>
 				</div>
 						</div>
 					</div>
@@ -587,39 +710,62 @@ import '../styles/global.css';
 		</main>
 
 		<div class="modal-overlay" data-modal-overlay="contact-modal" aria-hidden="true">
-			<div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-				<button type="button" class="modal-close" data-close-modal aria-label="Закрити форму">
-					<span>&times;</span>
-				</button>
-				<div class="modal-card">
-					<p class="modal-kicker">Форма запиту</p>
-					<h2 class="modal-title" id="contact-modal-title">Обговоримо ваш Webflow проєкт</h2>
-					<p class="modal-text">
-						Залиште контакт і коротко опишіть задачу — я відповім з варіантами формату, термінами та орієнтовним
-						бюджетом.
-					</p>
+			<div class="modal-shell">
+				<div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+					<button type="button" class="modal-close" data-close-modal aria-label="Закрити форму">
+						<span>&times;</span>
+					</button>
+					<h2 class="modal-title" id="contact-modal-title">Зворотний зв'язок</h2>
 					<form class="modal-form" action="https://api.web3forms.com/submit" method="POST">
 						<input type="hidden" name="access_key" value="718d01d8-a152-40c0-bd4e-e5b4d95f6962" />
 						<input type="hidden" name="subject" value="Нова заявка з модального вікна" />
 						<input type="hidden" name="from_name" value="Webflow Dev" />
 						<input type="hidden" name="redirect" value="" data-web3-redirect />
 						<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;" />
-						<label class="modal-field">
-							<span>Як з вами звʼязатися?</span>
-							<input type="text" name="contact" placeholder="Email, Telegram або інший контакт" required />
-						</label>
-						<label class="modal-field">
-							<span>Що потрібно зробити?</span>
+						<div class="modal-field">
+							<input
+								type="text"
+								name="name"
+								autocomplete="name"
+								placeholder="Ваше ім'я"
+								aria-label="Ваше ім'я"
+								required
+							/>
+						</div>
+						<div class="modal-field modal-field--phone">
+							<div class="modal-phone-iti-wrap">
+								<input
+									type="tel"
+									id="modal-phone"
+									inputmode="tel"
+									autocomplete="tel"
+									spellcheck="false"
+									aria-label="Номер телефону"
+									required
+								/>
+							</div>
+						</div>
+						<div class="modal-field">
+							<input
+								type="text"
+								name="telegram"
+								autocomplete="off"
+								placeholder="Telegram (@username або посилання)"
+								aria-label="Telegram"
+							/>
+						</div>
+						<div class="modal-field">
 							<textarea
 								name="message"
-								rows="3"
-								placeholder="Лендинг, бізнес-сайт, редизайн, перенос на Webflow тощо"
+								rows="1"
+								placeholder="Опишіть ваш проєкт"
+								aria-label="Опишіть ваш проєкт"
 								required
 							></textarea>
-						</label>
-						<button type="submit" class="btn btn-primary modal-submit">Надіслати запит</button>
+						</div>
+						<button type="submit" class="btn">Замовити проєкт</button>
 						<p class="modal-note">
-							Оплата можлива по ФОП, на карту, у криптовалюті та іншими зручними способами за домовленістю.
+							Натискаючи кнопку, ви погоджуєтесь на обробку даних для відповіді на запит.
 						</p>
 					</form>
 				</div>
@@ -644,7 +790,7 @@ import '../styles/global.css';
 							<span>Ім'я</span>
 							<input type="text" name="name" placeholder="Ваше ім'я" required />
 						</div>
-						<button type="submit" class="footer-intro-submit">Надіслати запит</button>
+						<button type="submit" class="btn">Надіслати запит</button>
 					</form>
 				</div>
 
@@ -696,6 +842,11 @@ import '../styles/global.css';
 				</div>
 			</div>
 		</footer>
+
+		<script>
+			import { initModalIntlTel } from '../scripts/modal-intl-tel';
+			initModalIntlTel();
+		</script>
 
 		<script>
 			// Мобільне меню
@@ -825,6 +976,127 @@ import '../styles/global.css';
 					});
 				});
 			}
+
+			// Blur for process cards (.process-row) based on scroll position
+			(() => {
+				const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+				if (prefersReducedMotion) return;
+
+				const sections = Array.from(document.querySelectorAll<HTMLElement>('#process'));
+				const rows = sections.flatMap((section) =>
+					Array.from(section.querySelectorAll<HTMLElement>('.process-row'))
+				);
+				if (!rows.length) return;
+
+				const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+
+				let raf = 0;
+				const update = () => {
+					raf = 0;
+					const viewportCenter = window.innerHeight / 2;
+					// Start blurring only below this viewport Y (lower than center)
+					const blurStartY = window.innerHeight * 0.65;
+					// Classic: 0px at center, grows with distance
+					const falloff = 320; // px
+					const maxBlur = 6; // px
+
+					rows.forEach((row) => {
+						const rect = row.getBoundingClientRect();
+						// Ignore hidden/offscreen rows (e.g. hidden light section) to avoid wrong reads
+						if (rect.width === 0 || rect.height === 0) return;
+						if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+						const center = rect.top + rect.height / 2;
+						// Only blur the part below the viewport center (top stays sharp)
+						const below = Math.max(0, center - blurStartY);
+						const t = clamp(below / falloff, 0, 1);
+						const blur = t * maxBlur;
+						row.style.setProperty('--process-card-blur', `${blur.toFixed(2)}px`);
+					});
+				};
+
+				const schedule = () => {
+					if (raf) return;
+					raf = window.requestAnimationFrame(update);
+				};
+
+				update();
+				window.addEventListener('scroll', schedule, { passive: true });
+				window.addEventListener('resize', schedule);
+			})();
+
+			// Single sticky media for "My services" (scroll-driven preview)
+			(() => {
+				const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+				const media = document.querySelector<HTMLElement>('[data-my-services-media]');
+				const mediaImg = media?.querySelector<HTMLImageElement>('.my-services-media-img') ?? null;
+				const items = Array.from(document.querySelectorAll<HTMLElement>('#my-services .my-service'));
+				if (!media || !items.length) return;
+
+				let raf = 0;
+
+				const setVisible = (visible: boolean) => {
+					media.classList.toggle('is-visible', visible);
+					media.classList.toggle('is-hidden', !visible);
+				};
+
+				const setImage = (item: HTMLElement | null) => {
+					if (!mediaImg || !item) return;
+					const next = item.getAttribute('data-my-service-image');
+					if (!next || mediaImg.getAttribute('src') === next) return;
+					mediaImg.setAttribute('src', next);
+				};
+
+				const update = () => {
+					raf = 0;
+					const triggerY = Math.round(window.innerHeight * 0.3); // ~30% from top
+					const viewportH = window.innerHeight;
+
+					let activeItem: HTMLElement | null = null;
+					let bestDelta = Number.POSITIVE_INFINITY;
+
+					items.forEach((item) => {
+						const rect = item.getBoundingClientRect();
+						// consider only items that intersect viewport at all
+						if (rect.bottom < 0 || rect.top > viewportH) return;
+
+						// "centered" item heuristic
+						const center = rect.top + rect.height / 2;
+						const delta = Math.abs(center - viewportH / 2);
+
+						// Reveal when item crosses ~30% line, and keep visible while media fits inside the item
+						const mediaH = media.getBoundingClientRect().height || 0;
+						const crossesTrigger = rect.top <= triggerY && rect.bottom >= triggerY;
+						const canFit = rect.bottom >= triggerY + mediaH;
+						if (!crossesTrigger || !canFit) return;
+
+						if (delta < bestDelta) {
+							bestDelta = delta;
+							activeItem = item;
+						}
+					});
+
+					if (!activeItem) {
+						setVisible(prefersReducedMotion ? true : false);
+						return;
+					}
+
+					setVisible(true);
+					setImage(activeItem);
+					items.forEach((item) => item.classList.toggle('is-active', item === activeItem));
+				};
+
+				const schedule = () => {
+					if (raf) return;
+					raf = window.requestAnimationFrame(update);
+				};
+
+				// initial
+				setVisible(prefersReducedMotion ? true : false);
+				update();
+				window.addEventListener('scroll', schedule, { passive: true });
+				window.addEventListener('resize', schedule);
+			})();
 
 			const processItems = document.querySelectorAll('.process-item[data-step]');
 			const processPanels = document.querySelectorAll('.process-preview-panel[data-step-panel]');

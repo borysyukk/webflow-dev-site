@@ -11,9 +11,14 @@
     "autosave:once": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/autosave-once.ps1",
     "autosave:install": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-autosave-task.ps1",
     "autosave:remove": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/remove-autosave-task.ps1",
-    "restore:branch": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/restore-checkpoint.ps1"
+    "restore:branch": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/restore-checkpoint.ps1",
+    "dev:install-startup": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-dev-startup-task.ps1",
+    "dev:remove-startup": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/remove-dev-startup-task.ps1",
+    "dev:install-startup-shortcut": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-dev-startup-shortcut.ps1",
+    "dev:remove-startup-shortcut": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/remove-dev-startup-shortcut.ps1"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "intl-tel-input": "^26.8.1"
   }
 }
