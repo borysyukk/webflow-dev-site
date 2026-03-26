@@ -2294,7 +2294,7 @@ main > section.section.faq {
   gap: 0.2rem;
   font-size: 60px;
   line-height: 1.06;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-accent);
   max-width: 12ch;
   text-wrap: balance;
