@@ -20,5 +20,8 @@
   "dependencies": {
     "astro": "^5.17.1",
     "intl-tel-input": "^26.8.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.60.0"
   }
 }
