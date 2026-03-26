@@ -218,7 +218,7 @@ import '../styles/global.css';
 			<section id="my-services" class="section my-services">
 				<div class="section-pad">
 					<div class="container">
-						<div class="section-kicker section-kicker--two-lines">
+						<div class="section-kicker section-kicker--two-lines section-kicker--bg" data-kicker-bg="сайти">
 							<h2 class="section-kicker-title">Типи<br />сайтів</h2>
 							<span class="section-kicker-line" aria-hidden="true"></span>
 						</div>
@@ -308,7 +308,7 @@ import '../styles/global.css';
 					<div class="container">
 						<div class="section-content process-shell">
 							<div class="process-intro">
-								<div class="section-kicker">
+								<div class="section-kicker section-kicker--bg" data-kicker-bg="етапи">
 									<h2 class="section-kicker-title">Етапи роботи</h2>
 								</div>
 								<p class="section-kicker-subtitle">Теплий контакт і чіткий процес від першого повідомлення до запуску.</p>
@@ -349,7 +349,7 @@ import '../styles/global.css';
 			<section id="about" class="section about">
 				<div class="section-pad">
 					<div class="container">
-						<div class="section-kicker section-kicker--two-lines">
+						<div class="section-kicker section-kicker--two-lines section-kicker--bg" data-kicker-bg="про мене">
 							<h2 class="section-kicker-title about-heading">Про<br />мене</h2>
 							<span class="section-kicker-line" aria-hidden="true"></span>
 						</div>
@@ -499,8 +499,12 @@ import '../styles/global.css';
 			<section id="faq" class="section faq">
 				<div class="section-pad">
 					<div class="container">
+						<div class="section-kicker section-kicker--bg" data-kicker-bg="питання">
+							<h2 class="section-kicker-title">FAQ</h2>
+							<span class="section-kicker-line" aria-hidden="true"></span>
+						</div>
+						<p class="section-kicker-subtitle">Питання, які задають найчастіше</p>
 						<div class="section-content faq-layout">
-							<p class="faq-kicker">Питання, які задають найчастіше</p>
 							<div class="faq-list" role="list">
 								<button
 									type="button"
@@ -510,7 +514,11 @@ import '../styles/global.css';
 									aria-expanded="false"
 								>
 									<span class="faq-question">Як виглядає старт роботи над проєктом?</span>
-									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-plus" aria-hidden="true">
+										<svg class="faq-plus-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" />
+										</svg>
+									</span>
 									<span class="faq-answer">
 										Починаємо з короткого дзвінка або листа: фіксуємо цілі, обсяг сторінок, дедлайни і бюджет. Далі
 										я пропоную структуру сторінки/сайту, після узгодження я переходжу до верстки у Webflow.
@@ -524,7 +532,11 @@ import '../styles/global.css';
 									aria-expanded="false"
 								>
 									<span class="faq-question">Скільки часу займає створення сайту?</span>
-									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-plus" aria-hidden="true">
+										<svg class="faq-plus-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" />
+										</svg>
+									</span>
 									<span class="faq-answer">
 										Односторінковий лендинг зазвичай займає 5–10 робочих днів. Багатосторінкові сайти або проєкти з
 										CMS займають довше — залежить від кількості сторінок, стану контенту та швидкості зворотного
@@ -539,7 +551,11 @@ import '../styles/global.css';
 									aria-expanded="false"
 								>
 									<span class="faq-question">Чи допомагаєте з наповненням і структурою контенту?</span>
-									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-plus" aria-hidden="true">
+										<svg class="faq-plus-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" />
+										</svg>
+									</span>
 									<span class="faq-answer">
 										Так. Якщо у вас вже є текст і матеріали — допоможу адаптувати їх під структуру сторінки. Якщо
 										контенту мало, можу запропонувати каркас, підказати, що саме варто додати, і зібрати все у
@@ -554,7 +570,11 @@ import '../styles/global.css';
 									aria-expanded="false"
 								>
 									<span class="faq-question">Як відбувається оплата за проєкт?</span>
-									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-plus" aria-hidden="true">
+										<svg class="faq-plus-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" />
+										</svg>
+									</span>
 									<span class="faq-answer">
 										Можливі кілька варіантів: оплата по ФОП з рахунком, переказ на карту українського банку,
 										криптовалюта, а також інші способи за домовленістю. Деталі фіксуємо перед стартом, щоб вам було
@@ -569,7 +589,11 @@ import '../styles/global.css';
 									aria-expanded="false"
 								>
 									<span class="faq-question">Що я зможу редагувати самостійно після запуску?</span>
-									<span class="faq-plus" aria-hidden="true">+</span>
+									<span class="faq-plus" aria-hidden="true">
+										<svg class="faq-plus-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+											<path d="M12 5v14M5 12h14" />
+										</svg>
+									</span>
 									<span class="faq-answer">
 										Після запуску ви зможете самостійно змінювати тексти, зображення та записи в CMS (кейси, блог,
 										новини). Я налаштовую структуру так, щоб редагування було безпечним і не ламало верстку.
@@ -636,7 +660,7 @@ import '../styles/global.css';
 								required
 							></textarea>
 						</div>
-						<button type="submit" class="btn">Замовити проєкт</button>
+						<button type="submit" class="btn">Надіслати</button>
 						<p class="modal-note">
 							Натискаючи кнопку, ви погоджуєтесь на обробку даних для відповіді на запит.
 						</p>
@@ -648,7 +672,7 @@ import '../styles/global.css';
 		<footer class="footer">
 			<div class="footer-shell container">
 				<div class="footer-intro" id="footer-contact">
-					<h2 class="footer-intro-title">Готові створювати досвід, що справді поєднує людей?</h2>
+					<h2 class="footer-intro-title">Є ідеї? Обговорімо!</h2>
 					<form class="footer-intro-form" action="https://api.web3forms.com/submit" method="POST">
 						<input type="hidden" name="access_key" value="718d01d8-a152-40c0-bd4e-e5b4d95f6962" />
 						<input type="hidden" name="subject" value="Нова заявка з футера" />
@@ -668,50 +692,56 @@ import '../styles/global.css';
 				</div>
 
 				<div class="footer-top">
-					<div class="footer-col footer-col-links">
-						<a href="#hero" class="footer-name" aria-label="До початку сторінки">
-							<img
-								src="/images/logo-large.svg"
-								alt="Логотип портфоліо"
-								class="logo-image"
-								width="895"
-								height="388"
-								loading="lazy"
-								decoding="async"
-							/>
-						</a>
-							<div class="footer-links-grid">
-							<div class="footer-links-group">
-								<p class="footer-label">Контакти</p>
-								<a class="footer-link" href="mailto:borysyukk@gmail.com">borysyukk@gmail.com</a>
-								<a class="footer-link" href="tel:+380683062757">+38 068 306 27 57</a>
-							</div>
-							<div class="footer-links-group">
-								<p class="footer-label">Месенджери</p>
-								<a
-									class="footer-link"
-									href="https://t.me/makella201"
-									target="_blank"
-									rel="noopener noreferrer"
-									title="https://t.me/makella201"
-									aria-label="Telegram @makella201"
-								>
-									Telegram
-								</a>
-							</div>
+					<a href="#hero" class="footer-name" aria-label="До початку сторінки">
+						<img
+							src="/images/logo-large.svg"
+							alt="Логотип портфоліо"
+							class="logo-image"
+							width="895"
+							height="388"
+							loading="lazy"
+							decoding="async"
+						/>
+					</a>
+					<div class="footer-meta-row">
+						<div class="footer-contacts-row">
+							<a class="footer-link footer-link-inline" href="mailto:borysyukk@gmail.com" aria-label="Email">
+								<span class="footer-link-icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" focusable="false">
+										<path d="M3 6h18v12H3zM3 7l9 7 9-7" />
+									</svg>
+								</span>
+								<span>borysyukk@gmail.com</span>
+							</a>
+							<a class="footer-link footer-link-inline" href="tel:+380683062757" aria-label="Телефон">
+								<span class="footer-link-icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" focusable="false">
+										<path d="M6.6 3h3.2l1.2 4.1-1.9 1.9a15 15 0 0 0 5.8 5.8l1.9-1.9L21 14.2v3.2a2 2 0 0 1-2.2 2A16.8 16.8 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3z" />
+									</svg>
+								</span>
+								<span>+38 068 306 27 57</span>
+							</a>
+							<a
+								class="footer-link footer-link-inline"
+								href="https://t.me/makella201"
+								target="_blank"
+								rel="noopener noreferrer"
+								title="https://t.me/makella201"
+								aria-label="Telegram @makella201"
+							>
+								<span class="footer-link-icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" focusable="false">
+										<path d="M21 4 3.9 10.6l4.5 1.6L18 6.5l-7.3 6.8v4.4l2.9-2.8 4.3 3.1z" />
+									</svg>
+								</span>
+								<span>Telegram</span>
+							</a>
+						</div>
+						<div class="footer-col footer-col-copy">
+							<p class="footer-copy">© 2026 borysyuk digital. Усі права захищені.</p>
+							<p class="footer-copy footer-fop">ФОП Борисюк Станіслав Ігорович</p>
 						</div>
 					</div>
-					<div class="footer-col footer-col-right">
-						<a href="#hero" class="footer-back">Назад догори ↑</a>
-					</div>
-					<div class="footer-col footer-col-copy">
-						<p class="footer-copy">© 2026 Webflow Dev. Усі права захищені.</p>
-					</div>
-				</div>
-			</div>
-			<div class="footer-display-wrap">
-				<div class="container">
-					<p class="footer-display">Webflow Dev</p>
 				</div>
 			</div>
 		</footer>

@@ -207,9 +207,9 @@ a:not(.btn):hover {
 }
 
 .footer-name .logo-image {
-  height: clamp(1.5rem, 4vw, 2.25rem);
+  height: clamp(1.8rem, 4.8vw, 2.7rem);
   width: auto;
-  max-width: min(14rem, 85vw);
+  max-width: min(16.8rem, 85vw);
 }
 
 .logo img {
@@ -422,12 +422,12 @@ main {
 }
 
 .section-pad {
-  padding-block: 60px;
+  padding-block: 80px;
 }
 
 @media (min-width: 48rem) {
   .section-pad {
-    padding-block: 120px;
+    padding-block: 80px;
   }
 }
 
@@ -1200,6 +1200,23 @@ main > section + section {
   gap: 1.25rem;
   --kicker-font-size: 40px;
   --kicker-line-height: 1.05;
+  position: relative;
+}
+
+.section-kicker--bg::before {
+  content: attr(data-kicker-bg);
+  position: absolute;
+  left: 0;
+  bottom: -0.22em;
+  font-family: var(--font-heading);
+  font-size: clamp(5.2rem, 13vw, 10rem);
+  line-height: 0.82;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgb(232 232 237 / 7%);
+  pointer-events: none;
+  z-index: 0;
+  text-transform: lowercase;
 }
 
 .section-kicker-title {
@@ -1209,6 +1226,8 @@ main > section + section {
   font-weight: 400;
   color: rgba(232, 232, 237, 0.75);
   width: fit-content;
+  position: relative;
+  z-index: 1;
 }
 
 /* Override generic .section h2 sizing for section kickers */
@@ -1222,6 +1241,8 @@ main > section + section {
   height: 0.0625rem;
   flex: 1 1 auto;
   background: var(--color-accent);
+  position: relative;
+  z-index: 1;
 }
 
 /* For 2-line kicker titles: align line to middle of lower line */
@@ -2001,11 +2022,11 @@ main > section + section {
 }
 
 main > section.section.faq {
-  --section-bg: #ffffff;
-  --color-text: #0d0f14;
-  --color-muted: #4b5563;
-  --color-divider: rgba(15, 23, 42, 0.12);
-  background: #ffffff !important;
+  --section-bg: transparent;
+  --color-text: #e8e8ed;
+  --color-muted: rgba(232, 232, 237, 0.72);
+  --color-divider: rgba(255, 255, 255, 0.14);
+  background: transparent !important;
   border-radius: clamp(2.25rem, 5vw, 4rem);
   overflow: hidden;
 }
@@ -2015,18 +2036,21 @@ main > section.section.faq {
 }
 
 .faq-layout {
-  gap: 1.25rem;
-  max-width: 900px;
-  margin: 0 auto;
+  display: block;
 }
 
-.faq-kicker {
-  color: #111827;
-  font-size: 1rem;
-  letter-spacing: 0.01em;
+.faq .section-kicker {
+  margin-bottom: 40px;
+}
+
+.faq .section-kicker-subtitle {
+  margin-top: 0;
 }
 
 .faq-list {
+  width: min(100%, 52%);
+  margin-left: auto;
+  min-width: 0;
   border-top: 0.0625rem solid var(--color-divider);
 }
 
@@ -2036,7 +2060,8 @@ main > section.section.faq {
   border-bottom: 0.0625rem solid var(--color-divider);
   background: transparent;
   color: var(--color-text);
-  padding: 1.25rem 0.125rem;
+  font-family: var(--font-sans);
+  padding: 1.25rem 1rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 2.25rem;
   grid-template-rows: auto auto;
@@ -2050,13 +2075,15 @@ main > section.section.faq {
 .faq-question {
   grid-column: 1;
   grid-row: 1;
-  font-size: clamp(1.05rem, 2.1vw, 2rem);
+  font-family: var(--font-sans);
+  font-size: 24px;
   line-height: 1.2;
   font-weight: 500;
   overflow-wrap: break-word;
   text-align: left;
   min-width: 0;
   padding-right: 0.25rem;
+  transition: color 0.2s ease;
 }
 
 .faq-plus {
@@ -2065,11 +2092,27 @@ main > section.section.faq {
   justify-self: end;
   align-self: start;
   width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: clamp(1.4rem, 2vw, 2rem);
-  line-height: 1;
-  color: #111827;
-  transition: transform 180ms ease;
+  color: #ffffff;
+  transition: transform 180ms ease, color 0.2s ease;
+}
+
+.faq-plus-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: block;
+}
+
+.faq-plus-icon path {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  fill: none;
 }
 
 .faq-answer {
@@ -2077,9 +2120,10 @@ main > section.section.faq {
   grid-row: 2;
   width: 100%;
   margin-top: 0;
-  font-size: clamp(1rem, 3.2vw, 1.375rem);
+  font-family: var(--font-sans);
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--color-text);
+  color: var(--color-muted);
   overflow-wrap: break-word;
   max-height: 0;
   opacity: 0;
@@ -2097,6 +2141,23 @@ main > section.section.faq {
 
 .faq-item.is-open .faq-plus {
   transform: rotate(45deg);
+}
+
+.faq-item:hover .faq-question,
+.faq-item.is-open .faq-question {
+  color: var(--color-accent);
+}
+
+.faq-item:hover .faq-plus,
+.faq-item.is-open .faq-plus {
+  color: var(--color-accent);
+}
+
+@media (max-width: 56rem) {
+  .faq-list {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .services {
@@ -2628,6 +2689,7 @@ main > section.section.faq {
 .footer-intro-title {
   margin: 0;
   max-width: 17ch;
+  font-family: var(--font-sans);
   font-size: clamp(1.9rem, 4vw, 3rem);
   line-height: 1.04;
   font-weight: 600;
@@ -2680,8 +2742,7 @@ main > section.section.faq {
 
 .footer-top {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr) minmax(0, 0.9fr);
-  gap: 1.2rem;
+  gap: 2rem;
 }
 
 .footer-col {
@@ -2691,14 +2752,56 @@ main > section.section.faq {
   text-align: left;
 }
 
-.footer-col-links {
-  gap: 0.6rem;
+.footer-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.footer-contacts-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.1rem 1.6rem;
+  flex: 1 1 auto;
+  width: auto;
+}
+
+.footer-link-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.footer-link-icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex: 0 0 1rem;
+}
+
+.footer-link-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.footer-link-icon path {
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
   width: 100%;
 }
 
@@ -2727,20 +2830,8 @@ main > section.section.faq {
 }
 
 .footer-link:hover,
-.footer-back:hover {
+.footer-link-inline:hover {
   color: var(--color-accent);
-}
-
-.footer-col-center,
-.footer-col-right {
-  align-items: start;
-}
-
-.footer-back {
-  color: var(--color-text);
-  font-weight: 500;
-  font-size: 1.35rem;
-  justify-self: start;
 }
 
 .footer-copy {
@@ -2748,58 +2839,22 @@ main > section.section.faq {
   font-size: 0.98rem;
 }
 
-.footer-col-right {
-  padding-top: 1.55rem;
-  justify-content: center;
+.footer-fop {
+  font-size: 14px;
+  color: #76767e;
 }
 
 .footer-col-copy {
-  padding-top: 1.8rem;
+  padding-top: 0;
   justify-items: end;
+  justify-self: auto;
   text-align: right;
-}
-
-.footer-display-wrap {
-  border-top: 0.0625rem solid var(--color-divider);
-  padding: clamp(1rem, 2.2vw, 1.8rem) 0 clamp(0.5rem, 1.2vw, 1rem);
-  overflow-x: clip;
-  max-width: 100%;
-}
-
-@supports not (overflow: clip) {
-  .footer-display-wrap {
-    overflow-x: hidden;
-  }
-}
-
-.footer-display {
-  margin: 0;
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
-  font-family: var(--font-sans);
-  font-size: clamp(3.6rem, 18vw, 13rem);
-  line-height: 0.88;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: color-mix(in srgb, var(--color-text) 18%, transparent);
-  white-space: nowrap;
-  overflow-wrap: anywhere;
-  box-sizing: border-box;
-}
-
-@media (max-width: 40rem) {
-  .footer-display {
-    font-size: clamp(2rem, 11vw, 4.5rem);
-    white-space: normal;
-    line-height: 0.92;
-    padding-inline: 0.25rem;
-  }
+  flex: 0 0 auto;
 }
 
 @media (min-width: 64rem) {
   .footer-intro {
-    grid-template-columns: minmax(20rem, 1fr) minmax(24rem, 30rem);
+    grid-template-columns: minmax(20rem, 1fr) minmax(24rem, 34rem);
     align-items: start;
     gap: 1.2rem;
   }
@@ -2892,18 +2947,10 @@ main > section.section.faq {
     gap: calc(var(--section-spacing) / 2);
   }
 
-  .footer-links-grid {
-    grid-template-columns: 1fr;
-    gap: calc(var(--section-spacing) / 2);
-  }
-
-  .footer-col-right {
-    padding-top: 0;
-    justify-self: start;
-  }
-
-  .footer-back {
-    justify-self: start;
+  .footer-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .footer-col-copy {
@@ -2912,8 +2959,7 @@ main > section.section.faq {
     padding-top: 0;
   }
 
-  .footer-link,
-  .footer-back {
+  .footer-link {
     overflow-wrap: anywhere;
   }
 
