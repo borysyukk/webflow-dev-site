@@ -10,6 +10,15 @@ import '../styles/global.css';
 		<meta name="description" content="Розробляю сайти на Webflow — лендинги, бізнес-сайти та багатосторінкові проєкти. Акуратна верстка, чітка структура, зрозумілий процес." />
 		<meta name="generator" content={Astro.generator} />
 
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESVKNWBD9N"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-ESVKNWBD9N');
+		</script>
+
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
